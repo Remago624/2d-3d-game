@@ -3,6 +3,10 @@ extends CharacterBody3D
 var mouse_sens: float = 0.001
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+@onready var camera = $Node3D/Camera3D
+const bob_freq = 2.0
+const bob_amp = 0.08
+var t_bob = 0.0
 	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 var bullet = load("res://Scenes/bullet.tscn")
 var instance
@@ -52,6 +56,8 @@ func _physics_process(delta: float) -> void:
 		$FireTimer.stop()
 		gun_anim.play("RESET")
 		gun_anim2.play("RESET")
+	t_bob += delta * velocity.length() * float(is_on_floor())
+	camera.transform.origin = _headbob(t_bob)
 
 	move_and_slide()
 
@@ -67,3 +73,9 @@ func _on_fire_timer_timeout() -> void:
 	instance2.transform.basis = gun_ray_cast2.global_transform.basis
 	get_parent().add_child(instance)
 	get_parent().add_child(instance2)
+
+
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * bob_freq) * bob_amp
+	return pos
