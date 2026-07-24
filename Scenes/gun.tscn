@@ -3,6 +3,3 @@
 [ext_resource type="PackedScene" uid="uid://dy32jbnit5jpd" path="res://assets/Assault Rifle by Quaternius - K2lXTYFSLC.glb" id="1_nxj5y"]
 
 [node name="Root Scene" unique_id=2131942458 instance=ExtResource("1_nxj5y")]
-
-[node name="AssaultRifle_2" parent="RootNode" parent_id_path=PackedInt32Array(49001210) index="0" unique_id=431483599]
-transform = Transform3D(21.685, 0, 0, 0, -9.478814e-07, 21.685, 0, -21.685, -9.478814e-07, 0, 0, 0)
