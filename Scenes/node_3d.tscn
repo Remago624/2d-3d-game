@@ -71,6 +71,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.663268, 0)
 [node name="Root Scene" parent="CharacterBody3D/Node3D/Camera3D" unique_id=2131942458 instance=ExtResource("2_okq71")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.338, -0.321, -0.321)
 
+[node name="Root Scene2" parent="CharacterBody3D/Node3D/Camera3D" unique_id=489007993 instance=ExtResource("2_okq71")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.3742906, -0.3210001, -0.321)
+
 [node name="FireTimer" type="Timer" parent="CharacterBody3D" unique_id=2135875436]
 wait_time = 0.1
 
