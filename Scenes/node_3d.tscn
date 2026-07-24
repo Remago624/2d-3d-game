@@ -71,6 +71,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.663268, 0)
 [node name="Root Scene" parent="CharacterBody3D/Node3D/Camera3D" unique_id=2131942458 instance=ExtResource("2_okq71")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.338, -0.321, -0.321)
 
+[node name="FireTimer" type="Timer" parent="CharacterBody3D" unique_id=2135875436]
+wait_time = 0.1
+one_shot = true
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1306421685]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00246298, 6.53831, 0)
 mesh = SubResource("BoxMesh_s1g8q")
@@ -79,3 +83,5 @@ mesh = SubResource("BoxMesh_s1g8q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=1898339979]
 shape = SubResource("ConcavePolygonShape3D_3vv3k")
+
+[connection signal="timeout" from="CharacterBody3D/FireTimer" to="CharacterBody3D" method="_on_fire_timer_timeout"]

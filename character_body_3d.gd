@@ -3,9 +3,11 @@ extends CharacterBody3D
 var mouse_sens: float = 0.001
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-
 	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+var bullet = load("res://Scenes/bullet.tscn")
+var instance
+@onready var gun_anim = $"Node3D/Camera3D/Root Scene/AnimationPlayer"
+@onready var gun_ray_cast = $"Node3D/Camera3D/Root Scene/RayCast3D"
 
 func _unhandled_input(event: InputEvent) -> void:
 	var rot := $Node3D
@@ -40,5 +42,19 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	if Input.is_action_just_pressed("shoot"):
+		if !gun_anim.is_playing():
+			$FireTimer.start()
+	if Input.is_action_just_released("shoot"):
+		$FireTimer.stop()
+		gun_anim.play("RESET")
 
 	move_and_slide()
+
+
+func _on_fire_timer_timeout() -> void:
+	gun_anim.play("shoot")
+	instance = bullet.instantiate()
+	instance.position = gun_ray_cast.global_position
+	instance.transform.basis = gun_ray_cast.global_transform.basis
+	get_parent().add_child(instance)

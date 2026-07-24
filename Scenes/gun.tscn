@@ -2,4 +2,53 @@
 
 [ext_resource type="PackedScene" uid="uid://dy32jbnit5jpd" path="res://assets/Assault Rifle by Quaternius - K2lXTYFSLC.glb" id="1_nxj5y"]
 
+[sub_resource type="Animation" id="Animation_nxj5y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AssaultRifle_2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oqrbh"]
+resource_name = "shoot"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AssaultRifle_2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.08, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t6ynv"]
+_data = {
+&"RESET": SubResource("Animation_nxj5y"),
+&"shoot": SubResource("Animation_oqrbh")
+}
+
 [node name="Root Scene" unique_id=2131942458 instance=ExtResource("1_nxj5y")]
+
+[node name="AssaultRifle_2" parent="RootNode" parent_id_path=PackedInt32Array(49001210) index="0" unique_id=431483599]
+transform = Transform3D(21.255, 0, 0, 0, -9.290855e-07, 21.255, 0, -21.255, -9.290855e-07, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=234314876]
+root_node = NodePath("../RootNode")
+libraries/ = SubResource("AnimationLibrary_t6ynv")
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="2" unique_id=1075372242]
+transform = Transform3D(3.5527137e-15, 5.9604645e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -5.9604645e-08, 0.963974, 0.12453255, 0)
+target_position = Vector3(0, -0.6, 0)

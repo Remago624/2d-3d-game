@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c34priejxpuww"]
+
+[ext_resource type="Script" uid="uid://b4eh1f6evmdfi" path="res://Scenes/bullet.gd" id="1_oduel"]
+[ext_resource type="Material" uid="uid://cot8q4oroofjy" path="res://Scenes/new_standard_material_3d.tres" id="1_xjght"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fdyoq"]
+radius = 0.505
+height = 1.4643555
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0idsm"]
+top_radius = 0.6
+bottom_radius = 0.6
+height = 0.65966797
+
+[node name="Bullet" type="Node3D" unique_id=1478833791]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+script = ExtResource("1_oduel")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=53349249]
+transform = Transform3D(-0.1, -1.509958e-08, 6.6002364e-16, 0, -4.371139e-09, -0.1, 1.509958e-08, -0.1, 4.371139e-09, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_fdyoq")
+surface_material_override/0 = ExtResource("1_xjght")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=329982564]
+transform = Transform3D(0.84, -3.5527137e-15, 0, 3.5527137e-15, 0.84, 0, 0, 0, 0.84, 3.4573368e-08, -0.4958291, 0)
+mesh = SubResource("CylinderMesh_0idsm")
+surface_material_override/0 = ExtResource("1_xjght")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1751682755]
+target_position = Vector3(0, 0, -0.6)
