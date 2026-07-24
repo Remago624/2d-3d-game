@@ -12,6 +12,21 @@ top_radius = 0.6
 bottom_radius = 0.6
 height = 0.65966797
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oduel"]
+albedo_color = Color(1, 0.9647059, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.9647059, 0.23529412, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6afsh"]
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 5.0
+initial_velocity_max = 7.0
+gravity = Vector3(0, -9, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_id1th"]
+size = Vector3(0.04, 0.04, 0.04)
+
 [node name="Bullet" type="Node3D" unique_id=1478833791]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 script = ExtResource("1_oduel")
@@ -28,3 +43,19 @@ surface_material_override/0 = ExtResource("1_xjght")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1751682755]
 target_position = Vector3(0, 0, -0.6)
+debug_shape_thickness = 5
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1583937065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6689736)
+material_override = SubResource("StandardMaterial3D_oduel")
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_6afsh")
+draw_pass_1 = SubResource("BoxMesh_id1th")
+
+[node name="bullet_delete" type="Timer" parent="." unique_id=148096121]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="bullet_delete" to="." method="_on_bullet_delete_timeout"]

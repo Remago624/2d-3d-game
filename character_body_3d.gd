@@ -43,8 +43,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	if Input.is_action_just_pressed("shoot"):
-		if !gun_anim.is_playing():
-			$FireTimer.start()
+		_on_fire_timer_timeout()
+		$FireTimer.start()
 	if Input.is_action_just_released("shoot"):
 		$FireTimer.stop()
 		gun_anim.play("RESET")
