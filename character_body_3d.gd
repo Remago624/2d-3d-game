@@ -1,9 +1,13 @@
 extends CharacterBody3D
-
 var mouse_sens: float = 0.001
-const SPEED = 5.0
+var speed = 5.0
+const walk_speed = 5.0
+const sprint_speed = 8.0
+const maya3a_speed = 3.0
 const JUMP_VELOCITY = 4.5
 @onready var camera = $Node3D/Camera3D
+const FOV = 70.0
+const FOV_change = 1.5
 const bob_freq = 2.0
 const bob_amp = 0.08
 var t_bob = 0.0
@@ -15,6 +19,7 @@ var instance2
 @onready var gun_anim2 = $"Node3D/Camera3D/Root Scene2/AnimationPlayer"
 @onready var gun_ray_cast = $"Node3D/Camera3D/Root Scene/RayCast3D"
 @onready var gun_ray_cast2 = $"Node3D/Camera3D/Root Scene2/RayCast3D"
+@onready var gun = $"Node3D/Camera3D/Root Scene"
 
 func _unhandled_input(event: InputEvent) -> void:
 	var rot := $Node3D
@@ -38,17 +43,28 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+		
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 	var direction = ($Node3D.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+	
+	#walk and sprint
+	if Input.is_action_pressed("sprint"):
+		speed = sprint_speed
+	elif Input.is_action_pressed("maya3a"):
+		speed = maya3a_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		speed = walk_speed
+	if is_on_floor():
+		if direction:
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
+		else:
+			velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
+			velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)	
+	else:
+		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
+		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
+		
 	if Input.is_action_just_pressed("shoot"):
 		_on_fire_timer_timeout()
 		$FireTimer.start()
@@ -58,7 +74,11 @@ func _physics_process(delta: float) -> void:
 		gun_anim2.play("RESET")
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
-
+	
+	#FOV
+	var velocity_clamped = clamp(velocity.length(), 5.0, sprint_speed * 2)
+	var target_FOV = FOV + FOV_change * velocity_clamped
+	camera.fov = lerp(camera.fov, target_FOV, delta * 6.0)
 	move_and_slide()
 
 
@@ -78,4 +98,5 @@ func _on_fire_timer_timeout() -> void:
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * bob_freq) * bob_amp
+	pos.x = cos(time * bob_freq / 2) * bob_amp
 	return pos

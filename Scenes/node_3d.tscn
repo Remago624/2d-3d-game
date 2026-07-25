@@ -42,6 +42,26 @@ emission = Color(1, 1, 0, 1)
 albedo_color = Color(1, 0, 0, 1)
 emission = Color(1, 0, 0, 1)
 
+[sub_resource type="GDScript" id="GDScript_bi5fs"]
+script/source = "extends CSGBox3D
+var health = 100
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func take_damage(amount):
+	health -= amount
+
+	if health <= 0:
+		queue_free()
+"
+
 [node name="Node3D" type="Node3D" unique_id=902139903]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=507806798]
@@ -76,10 +96,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.663268, 0)
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Node3D" unique_id=236045009]
 
 [node name="Root Scene" parent="CharacterBody3D/Node3D/Camera3D" unique_id=2131942458 instance=ExtResource("2_okq71")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.338, -0.321, -0.321)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.338, -0.32099998, -0.2950038)
 
 [node name="Root Scene2" parent="CharacterBody3D/Node3D/Camera3D" unique_id=489007993 instance=ExtResource("2_okq71")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.3742906, -0.3210001, -0.321)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.3742906, -0.3210001, -0.2950038)
 
 [node name="FireTimer" type="Timer" parent="CharacterBody3D" unique_id=2135875436]
 wait_time = 0.1
@@ -101,5 +121,6 @@ transform = Transform3D(1.9855161, 0, 0, 0, 0.9999995, 0, 0, 0, 1.9685764, 0.297
 use_collision = true
 size = Vector3(1, 1.3969727, 1)
 material = SubResource("StandardMaterial3D_hn8rt")
+script = SubResource("GDScript_bi5fs")
 
 [connection signal="timeout" from="CharacterBody3D/FireTimer" to="CharacterBody3D" method="_on_fire_timer_timeout"]
