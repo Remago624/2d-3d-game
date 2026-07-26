@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://tcsaapd13w8t" path="res://Scripts/character_body_3d.gd" id="1_bi5fs"]
 [ext_resource type="Script" uid="uid://bsmcjpuc1d3ni" path="res://Scenes/world.gd" id="1_wosnj"]
 [ext_resource type="PackedScene" uid="uid://esj5q5b666yg" path="res://Scenes/gun.tscn" id="2_okq71"]
-[ext_resource type="PackedScene" uid="uid://b2xaeajcqpxvw" path="res://Scenes/zombie.tscn" id="4_wosnj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -134,9 +133,6 @@ use_collision = true
 size = Vector3(1, 1.3969727, 1)
 material = SubResource("StandardMaterial3D_hn8rt")
 script = SubResource("GDScript_bi5fs")
-
-[node name="zombie" parent="." unique_id=2132411134 instance=ExtResource("4_wosnj")]
-transform = Transform3D(1.385, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 6.0416126, 0.0027988288, -1.0819635)
 
 [node name="UI" type="Control" parent="." unique_id=32387641]
 layout_mode = 3

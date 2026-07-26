@@ -4,7 +4,9 @@ var speed = 5.0
 const walk_speed = 5.0
 const sprint_speed = 8.0
 const maya3a_speed = 3.0
-const JUMP_VELOCITY = 4.5
+var JUMP_VELOCITY = 4.5
+const crouchJ_change = 1.0
+const crouchV_change = 0.3
 @onready var camera = $Node3D/Camera3D
 const FOV = 70.0
 const FOV_change = 1.5
@@ -20,7 +22,7 @@ var instance2
 @onready var gun_ray_cast = $"Node3D/Camera3D/Root Scene/RayCast3D"
 @onready var gun_ray_cast2 = $"Node3D/Camera3D/Root Scene2/RayCast3D"
 @onready var gun = $"Node3D/Camera3D/Root Scene"
-
+@onready var node3d = $Node3D
 signal player_hit
 const hit_stagger = 8.0
 
@@ -85,6 +87,7 @@ func _physics_process(delta: float) -> void:
 	var velocity_clamped = clamp(velocity.length(), 5.0, sprint_speed * 2)
 	var target_FOV = FOV + FOV_change * velocity_clamped
 	camera.fov = lerp(camera.fov, target_FOV, delta * 6.0)
+	_crouch()
 	move_and_slide()
 
 
@@ -110,3 +113,10 @@ func _headbob(time) -> Vector3:
 func hit(dir):
 	emit_signal("player_hit")
 	velocity += dir * hit_stagger
+func _crouch():
+	if Input.is_action_just_pressed("maya3a"):
+		node3d.global_position.y -= crouchV_change
+		JUMP_VELOCITY -= crouchJ_change
+	elif Input.is_action_just_released("maya3a"):
+		node3d.global_position.y += crouchV_change
+		JUMP_VELOCITY += crouchJ_change
