@@ -24,14 +24,21 @@ func _process(delta: float) -> void:
 	var space_state = get_world_3d().direct_space_state
 	var query = PhysicsRayQueryParameters3D.create(old_pos, new_pos)
 	query.exclude = [self]
+	query.collide_with_areas = true
+	query.collide_with_bodies = true
+	query.collision_mask = 1 << 1
 	
 	var result = space_state.intersect_ray(query)
-	
-	if ray.is_colliding() and !hit:
+	var collider = result.get("collider")
+	  #ray.is_colliding()
+	if result and !hit:
 		hit = true
 		set_process(false)
 		mesh.visible = false
-		particles.emitting = true 
+		particles.emitting = true
+		ray.enabled = false
+		if collider.is_in_group("enemy"):
+			collider.hit()
 		await get_tree().create_timer(1.0).timeout
 		queue_free()
 

@@ -13,6 +13,7 @@ const FOV_change = 1.5
 const bob_freq = 2.0
 const bob_amp = 0.08
 var t_bob = 0.0
+var FireDamage = 1.5
 	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 var bullet = load("res://Scenes/bullet.tscn")
 var instance
@@ -27,7 +28,8 @@ signal player_hit
 const hit_stagger = 8.0
 
 func _ready():
-	add_to_group("player")
+	#add_to_group("player") and this is the rest of the problem. You may know the solution to the problem and laugh at me for how it easy. get lost, why are you reading this rn :|
+	pass
 
 func _unhandled_input(event: InputEvent) -> void:
 	var rot := $Node3D
