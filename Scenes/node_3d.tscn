@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://mx6w65tt1ixu"]
 
 [ext_resource type="Script" uid="uid://tcsaapd13w8t" path="res://Scripts/character_body_3d.gd" id="1_bi5fs"]
-[ext_resource type="Script" uid="uid://bsmcjpuc1d3ni" path="res://Scenes/world.gd" id="1_wosnj"]
+[ext_resource type="Script" uid="uid://bsmcjpuc1d3ni" path="res://Scripts/world.gd" id="1_wosnj"]
 [ext_resource type="PackedScene" uid="uid://esj5q5b666yg" path="res://Scenes/gun.tscn" id="2_okq71"]
-[ext_resource type="PackedScene" uid="uid://buasiy6a2gnoa" path="res://Scenes/zombieragdoll.tscn" id="4_wosnj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -201,9 +200,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5618305, 0, -8.518141)
 [node name="Spawn_timer" type="Timer" parent="." unique_id=664366119]
 wait_time = 5.0
 autostart = true
-
-[node name="Zombieragdoll" parent="." unique_id=1130173950 instance=ExtResource("4_wosnj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.355158, 0.0750699, -0.80045295)
 
 [connection signal="player_hit" from="NavigationRegion3D/Player" to="." method="_on_player_player_hit"]
 [connection signal="timeout" from="NavigationRegion3D/Player/FireTimer" to="NavigationRegion3D/Player" method="_on_fire_timer_timeout"]

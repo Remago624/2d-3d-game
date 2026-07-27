@@ -3,13 +3,17 @@ extends CharacterBody3D
 const speed = 4.0
 var player = null
 var state
+@onready var zzz = $"."
 @export var player_path := "/root/world/NavigationRegion3D/Player"
 @onready var new_agent = $NavigationAgent3D
 @onready var anim_tree = $AnimationTree
+@onready var anim_player2 = $AnimationPlayer2
 @onready var Skeleton = $Armature/Skeleton3D
 const attack_range = 2.0
 var fi = "metadata/FireDamage"
 var health = 200
+var Zragdoll = load("res://Scenes/Zragdoll.tscn")
+var instance1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#player = get_tree().get_first_node_in_group("player") this for old issue, and don't worry I solved it
@@ -51,4 +55,13 @@ func _hit_finished():
 func _on_area_3d_body_part_hit(dam: Variant) -> void:
 	health -= dam * player.FireDamage
 	if health <= 0:
+		set_physics_process(false)
+		set_process(false)
+		collision_layer = 4
+		collision_mask = 4
+		anim_tree.active = false
+		anim_player2.active = true
+		anim_player2.play("Armature|mixamo_com|Layer0_001")
+		await get_tree().create_timer(2.2).timeout
 		queue_free()
+		
