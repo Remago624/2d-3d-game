@@ -134,10 +134,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.663268, 0)
 [node name="Camera3D" type="Camera3D" parent="NavigationRegion3D/Player/Node3D" unique_id=236045009]
 
 [node name="Root Scene" parent="NavigationRegion3D/Player/Node3D/Camera3D" unique_id=2131942458 instance=ExtResource("2_okq71")]
-transform = Transform3D(-0.017452352, 0, 0.9998477, 0, 1, 0, -0.9998477, 0, -0.017452352, 0.338, -0.32099998, -0.2950038)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.338, -0.32099998, -0.2950038)
 
 [node name="Root Scene2" parent="NavigationRegion3D/Player/Node3D/Camera3D" unique_id=489007993 instance=ExtResource("2_okq71")]
-transform = Transform3D(0.017452383, 0, 0.9998477, 0, 1, 0, -0.9998477, 0, 0.017452383, -0.3742906, -0.3210001, -0.2950038)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.3742906, -0.3210001, -0.2950038)
 
 [node name="FireTimer" type="Timer" parent="NavigationRegion3D/Player" unique_id=2135875436]
 wait_time = 0.1

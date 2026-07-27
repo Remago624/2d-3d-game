@@ -1510,7 +1510,7 @@ _data = {
 }
 
 [node name="zombie" unique_id=2132411134 instance=ExtResource("1_vbetq")]
-transform = Transform3D(1.385, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 0, 0, 0)
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 script = ExtResource("2_smuvq")
 
 [node name="Armature" parent="." index="0" unique_id=1033308274]

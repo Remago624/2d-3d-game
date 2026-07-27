@@ -3,6 +3,7 @@ simple 3D shooter game with mechanics to change the view of the game to 2D top-d
 
 Zombie character and its animations provided by Adobe Mixamo:
 https://www.mixamo.com/
+
 Zombie character used (Romero): https://www.mixamo.com/#/?page=1&query=Romero&type=Character
 
 Gun model by Quaternius:
