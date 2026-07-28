@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://tcsaapd13w8t" path="res://Scripts/character_body_3d.gd" id="1_bi5fs"]
 [ext_resource type="Script" uid="uid://bsmcjpuc1d3ni" path="res://Scripts/world.gd" id="1_wosnj"]
 [ext_resource type="PackedScene" uid="uid://esj5q5b666yg" path="res://Scenes/gun.tscn" id="2_okq71"]
+[ext_resource type="Script" uid="uid://qb51ykw4algg" path="res://Scripts/reticle.gd" id="4_wosnj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -42,26 +43,6 @@ emission = Color(1, 1, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hn8rt"]
 albedo_color = Color(1, 0, 0, 1)
 emission = Color(1, 0, 0, 1)
-
-[sub_resource type="GDScript" id="GDScript_bi5fs"]
-script/source = "extends CSGBox3D
-var health = 100
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func take_damage(amount):
-	health -= amount
-
-	if health <= 0:
-		queue_free()
-"
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8gasx"]
 
@@ -116,7 +97,6 @@ collision_layer = 3
 collision_mask = 3
 size = Vector3(1, 1.3969727, 1)
 material = SubResource("StandardMaterial3D_hn8rt")
-script = SubResource("GDScript_bi5fs")
 
 [node name="Player" type="CharacterBody3D" parent="NavigationRegion3D" unique_id=1681829599]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5386853, 0)
@@ -134,19 +114,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.663268, 0)
 [node name="Camera3D" type="Camera3D" parent="NavigationRegion3D/Player/Node3D" unique_id=236045009]
 
 [node name="Root Scene" parent="NavigationRegion3D/Player/Node3D/Camera3D" unique_id=2131942458 instance=ExtResource("2_okq71")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.338, -0.32099998, -0.2950038)
+transform = Transform3D(-4.398623e-08, -2.4039932e-09, 1, 0.06975646, 0.9975641, 5.466461e-09, -0.9975641, 0.06975646, -4.371139e-08, 0.36565378, -0.32099998, -0.29500377)
 
 [node name="Root Scene2" parent="NavigationRegion3D/Player/Node3D/Camera3D" unique_id=489007993 instance=ExtResource("2_okq71")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.3742906, -0.3210001, -0.2950038)
+transform = Transform3D(-4.398623e-08, -2.4039932e-09, 1, 0.06975646, 0.9975641, 5.466461e-09, -0.9975641, 0.06975646, -4.371139e-08, -0.366, -0.321, -0.295)
 
 [node name="FireTimer" type="Timer" parent="NavigationRegion3D/Player" unique_id=2135875436]
 wait_time = 0.1
 
 [node name="UI" type="Control" parent="." unique_id=32387641]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="UI" unique_id=2009697769]
 visible = false
@@ -155,27 +138,43 @@ offset_left = -334.0
 offset_top = -268.0
 offset_right = 1438.0
 offset_bottom = 904.0
-mouse_filter = 2
+mouse_filter = 1
 color = Color(1, 0, 0.07450981, 0.24313726)
 
-[node name="ReferenceRect" type="ReferenceRect" parent="UI" unique_id=210411466]
-visible = false
-layout_mode = 0
-offset_left = 571.0
-offset_top = 327.0
-offset_right = 582.0
-offset_bottom = 328.0
-editor_only = false
+[node name="Reticle" type="CenterContainer" parent="UI" unique_id=1300947178]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_wosnj")
 
-[node name="ReferenceRect2" type="ReferenceRect" parent="UI" unique_id=850936692]
-visible = false
-layout_mode = 0
-offset_left = 577.0
-offset_top = 322.0
-offset_right = 588.22925
-offset_bottom = 323.0
-rotation = 1.5707941
-editor_only = false
+[node name="Top" type="Line2D" parent="UI/Reticle" unique_id=921573590]
+position = Vector2(20, 20)
+points = PackedVector2Array(0, -5, 0, -15)
+width = 2.0
+
+[node name="Bottom" type="Line2D" parent="UI/Reticle" unique_id=73971225]
+position = Vector2(20, 20)
+points = PackedVector2Array(0, 5, 0, 15)
+width = 2.0
+
+[node name="Left" type="Line2D" parent="UI/Reticle" unique_id=196995824]
+position = Vector2(20, 20)
+points = PackedVector2Array(-5, 0, -15, 0)
+width = 2.0
+
+[node name="Right" type="Line2D" parent="UI/Reticle" unique_id=1495942285]
+position = Vector2(20, 20)
+points = PackedVector2Array(5, 0, 15, 0)
+width = 2.0
 
 [node name="Spawns" type="Node3D" parent="." unique_id=2091235032]
 
@@ -200,6 +199,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5618305, 0, -8.518141)
 [node name="Spawn_timer" type="Timer" parent="." unique_id=664366119]
 wait_time = 5.0
 autostart = true
+
+[node name="DeathScreen" type="CanvasLayer" parent="." unique_id=2018742394]
 
 [connection signal="player_hit" from="NavigationRegion3D/Player" to="." method="_on_player_player_hit"]
 [connection signal="timeout" from="NavigationRegion3D/Player/FireTimer" to="NavigationRegion3D/Player" method="_on_fire_timer_timeout"]

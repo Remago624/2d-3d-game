@@ -24,12 +24,19 @@ var instance2
 @onready var gun_ray_cast2 = $"Node3D/Camera3D/Root Scene2/RayCast3D"
 @onready var gun = $"Node3D/Camera3D/Root Scene"
 @onready var node3d = $Node3D
+var health = 100
+var zombie_damage
 signal player_hit
 const hit_stagger = 8.0
 
+const aim_assist_start = 3.0
+const aim_assist_end = 7.0
+var left_offset = -0.10
+var right_offset = 0.10
+const spread = 0.067
+
 func _ready():
-	#add_to_group("player") and this is the rest of the problem. You may know the solution to the problem and laugh at me for how it easy. get lost, why are you reading this rn :|
-	pass
+	randomize()
 
 func _unhandled_input(event: InputEvent) -> void:
 	var rot := $Node3D
@@ -90,16 +97,59 @@ func _physics_process(delta: float) -> void:
 	var target_FOV = FOV + FOV_change * velocity_clamped
 	camera.fov = lerp(camera.fov, target_FOV, delta * 6.0)
 	_crouch()
+	print(velocity)
 	move_and_slide()
 
 
 func _on_fire_timer_timeout() -> void:
+	var from = camera.global_position
+	var to = from + -camera.global_transform.basis.z * 1000.0
+
+	var space = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(from, to)
+	query.exclude = [self]
+
+	var result = space.intersect_ray(query)
+	var target = to
+	if !result.is_empty():
+		target = result.position
+		var distance = from.distance_to(target)
+		var weight = clamp(
+			(distance - aim_assist_start) / (aim_assist_end - aim_assist_start),
+			0.0,
+			1.0
+		)
+
+		var camera_basis = camera.global_basis
+		var right = camera.global_transform.basis.x
+		var up = camera.global_transform.basis.y
+		var random_right = randf_range(-spread, spread)
+		var random_up = randf_range(-spread, spread)
+		var target1 = target + right * (right_offset + random_right) + up * random_up
+		var target2 = target + right * (left_offset + random_up) + up * random_right
+		
+		var target_basis1 = Basis.looking_at((target1 - gun_ray_cast.global_position).normalized())
+		var target_basis2 = Basis.looking_at((target2 - gun_ray_cast2.global_position).normalized())
+		#var target_basis1 = Basis.looking_at((target - gun_ray_cast.global_position).normalized())
+		#var target_basis2 = Basis.looking_at((target - gun_ray_cast2.global_position).normalized())
+
+		gun_ray_cast.global_basis = camera_basis.slerp(target_basis1, weight)
+		gun_ray_cast2.global_basis = camera_basis.slerp(target_basis2, weight)
+	else:
+		gun_ray_cast.global_basis = camera.global_basis
+		gun_ray_cast2.global_basis = camera.global_basis
+	
+	
+	
 	gun_anim.play("shoot")
 	gun_anim2.play("shoot")
 	instance = bullet.instantiate()
 	instance2 = bullet.instantiate()
 	instance.position = gun_ray_cast.global_position
 	instance2.position = gun_ray_cast2.global_position
+	
+	
+	
 	instance.transform.basis = gun_ray_cast.global_transform.basis
 	instance2.transform.basis = gun_ray_cast2.global_transform.basis
 	get_parent().add_child(instance)
@@ -114,6 +164,10 @@ func _headbob(time) -> Vector3:
 
 func hit(dir):
 	emit_signal("player_hit")
+	zombie_damage = randi_range(15, 35)
+	health -= zombie_damage
+	if health <= 0:
+		health = 1
 	velocity += dir * hit_stagger
 func _crouch():
 	if Input.is_action_just_pressed("maya3a"):
@@ -122,3 +176,4 @@ func _crouch():
 	elif Input.is_action_just_released("maya3a"):
 		node3d.global_position.y += crouchV_change
 		JUMP_VELOCITY += crouchJ_change
+		

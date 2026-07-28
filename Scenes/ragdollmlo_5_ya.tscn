@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ddj26e5fbdms8"]
 
-[ext_resource type="PackedScene" uid="uid://c43e6t2ynk68e" path="res://zombie/ragdollmlo5ya.glb" id="1_jy243"]
-[ext_resource type="Script" uid="uid://df1tx414bgbct" path="res://Scenes/ragdollmlo_5_ya.gd" id="2_4cwuw"]
+[ext_resource type="PackedScene" path="res://zombie/ragdollmlo5ya.glb" id="1_jy243"]
+[ext_resource type="Script" uid="uid://df1tx414bgbct" path="res://Scripts/ragdollmlo_5_ya.gd" id="2_4cwuw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4cwuw"]
 radius = 0.00894023
