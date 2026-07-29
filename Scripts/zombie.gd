@@ -9,6 +9,7 @@ var state
 @onready var anim_tree = $AnimationTree
 @onready var anim_player2 = $AnimationPlayer2
 @onready var Skeleton = $Armature/Skeleton3D
+@onready var armature = $Armature
 const attack_range = 2.0
 var health = 200
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +20,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	velocity = Vector3.ZERO
 	match state.get_current_node():
 		"running":

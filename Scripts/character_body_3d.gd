@@ -7,6 +7,7 @@ const maya3a_speed = 3.0
 var JUMP_VELOCITY = 4.5
 const crouchJ_change = 1.0
 const crouchV_change = 0.3
+@onready var rot := $Node3D
 @onready var camera = $Node3D/Camera3D
 const FOV = 70.0
 const FOV_change = 1.5
@@ -38,12 +39,12 @@ var left_offset = -0.10
 var right_offset = 0.10
 var spread = 0.067
 
+signal player_died
+
 func _ready():
 	randomize()
 
 func _unhandled_input(event: InputEvent) -> void:
-	var rot := $Node3D
-	var camera := $Node3D/Camera3D
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
@@ -173,7 +174,8 @@ func hit(dir):
 	zombie_damage = randi_range(15, 35)
 	health -= zombie_damage
 	if health <= 0:
-		health = 1
+		emit_signal("player_died")
+		return
 	velocity += dir * hit_stagger
 func _crouch():
 	if Input.is_action_just_pressed("maya3a"):

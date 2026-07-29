@@ -141,7 +141,7 @@ offset_bottom = 904.0
 mouse_filter = 1
 color = Color(1, 0, 0.07450981, 0.24313726)
 
-[node name="Reticle" type="CenterContainer" parent="UI" unique_id=1300947178]
+[node name="Reticle" type="CenterContainer" parent="UI" unique_id=1300947178 node_paths=PackedStringArray("reticle_lines", "player_controller")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -155,10 +155,17 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_wosnj")
+reticle_lines = [NodePath("Top"), NodePath("Right"), NodePath("Bottom"), NodePath("Left")]
+player_controller = NodePath("../../NavigationRegion3D/Player")
 
 [node name="Top" type="Line2D" parent="UI/Reticle" unique_id=921573590]
 position = Vector2(20, 20)
 points = PackedVector2Array(0, -5, 0, -15)
+width = 2.0
+
+[node name="Right" type="Line2D" parent="UI/Reticle" unique_id=1495942285]
+position = Vector2(20, 20)
+points = PackedVector2Array(5, 0, 15, 0)
 width = 2.0
 
 [node name="Bottom" type="Line2D" parent="UI/Reticle" unique_id=73971225]
@@ -171,12 +178,9 @@ position = Vector2(20, 20)
 points = PackedVector2Array(-5, 0, -15, 0)
 width = 2.0
 
-[node name="Right" type="Line2D" parent="UI/Reticle" unique_id=1495942285]
-position = Vector2(20, 20)
-points = PackedVector2Array(5, 0, 15, 0)
-width = 2.0
-
 [node name="DeathScreen" type="CanvasLayer" parent="UI" unique_id=2018742394]
+process_mode = 2
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="UI/DeathScreen" unique_id=2084684766]
 anchors_preset = 15
@@ -238,6 +242,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5618305, 0, -8.518141)
 wait_time = 5.0
 autostart = true
 
+[connection signal="player_died" from="NavigationRegion3D/Player" to="." method="_on_player_player_died"]
 [connection signal="player_hit" from="NavigationRegion3D/Player" to="." method="_on_player_player_hit"]
 [connection signal="timeout" from="NavigationRegion3D/Player/FireTimer" to="NavigationRegion3D/Player" method="_on_fire_timer_timeout"]
+[connection signal="pressed" from="UI/DeathScreen/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="timeout" from="Spawn_timer" to="." method="_on_spawn_timer_timeout"]
