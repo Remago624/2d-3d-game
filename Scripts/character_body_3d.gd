@@ -31,9 +31,12 @@ const hit_stagger = 8.0
 
 const aim_assist_start = 3.0
 const aim_assist_end = 7.0
+var lo = -0.10
+var ro = 0.10
+var s = 0.067
 var left_offset = -0.10
 var right_offset = 0.10
-const spread = 0.067
+var spread = 0.067
 
 func _ready():
 	randomize()
@@ -97,7 +100,10 @@ func _physics_process(delta: float) -> void:
 	var target_FOV = FOV + FOV_change * velocity_clamped
 	camera.fov = lerp(camera.fov, target_FOV, delta * 6.0)
 	_crouch()
-	print(velocity)
+	if !Input.is_action_pressed("maya3a"):
+		spread = s + velocity.length() * 0.02
+	else:
+		spread = s
 	move_and_slide()
 
 
@@ -111,6 +117,7 @@ func _on_fire_timer_timeout() -> void:
 
 	var result = space.intersect_ray(query)
 	var target = to
+	
 	if !result.is_empty():
 		target = result.position
 		var distance = from.distance_to(target)
@@ -119,12 +126,11 @@ func _on_fire_timer_timeout() -> void:
 			0.0,
 			1.0
 		)
-
 		var camera_basis = camera.global_basis
-		var right = camera.global_transform.basis.x
-		var up = camera.global_transform.basis.y
 		var random_right = randf_range(-spread, spread)
 		var random_up = randf_range(-spread, spread)
+		var right = camera.global_transform.basis.x
+		var up = camera.global_transform.basis.y
 		var target1 = target + right * (right_offset + random_right) + up * random_up
 		var target2 = target + right * (left_offset + random_up) + up * random_right
 		

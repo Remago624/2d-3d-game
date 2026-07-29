@@ -176,44 +176,6 @@ position = Vector2(20, 20)
 points = PackedVector2Array(5, 0, 15, 0)
 width = 2.0
 
-[node name="DeathScreen" type="CanvasLayer" parent="UI" unique_id=2018742394]
-
-[node name="ColorRect" type="ColorRect" parent="UI/DeathScreen" unique_id=2084684766]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 0, 0.015686275, 0.42745098)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/DeathScreen" unique_id=1919310920]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -23.5
-offset_right = 20.0
-offset_bottom = 23.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="UI/DeathScreen/VBoxContainer" unique_id=686920473]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "Skill Issue"
-
-[node name="RetryButton" type="Button" parent="UI/DeathScreen/VBoxContainer" unique_id=523035612]
-layout_mode = 2
-text = "Retry. I bet you'll fail again."
-
-[node name="MainMenuButton" type="Button" parent="UI/DeathScreen/VBoxContainer" unique_id=1124733225]
-layout_mode = 2
-text = "Main Menu. Admit defeat."
-
 [node name="Spawns" type="Node3D" parent="." unique_id=2091235032]
 
 [node name="spawn" type="Node3D" parent="Spawns" unique_id=178918747]
@@ -237,6 +199,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5618305, 0, -8.518141)
 [node name="Spawn_timer" type="Timer" parent="." unique_id=664366119]
 wait_time = 5.0
 autostart = true
+
+[node name="DeathScreen" type="CanvasLayer" parent="." unique_id=2018742394]
 
 [connection signal="player_hit" from="NavigationRegion3D/Player" to="." method="_on_player_player_hit"]
 [connection signal="timeout" from="NavigationRegion3D/Player/FireTimer" to="NavigationRegion3D/Player" method="_on_fire_timer_timeout"]
