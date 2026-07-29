@@ -57,6 +57,13 @@ func _on_area_3d_body_part_hit(dam: Variant) -> void:
 		set_process(false)
 		collision_layer = 4
 		collision_mask = 4
+		for node in find_children("*"):
+			if node is Area3D:
+				node.monitoring = false
+				node.monitorable = false
+		for node in find_children("*"):
+			if node is CollisionShape3D:
+				node.disabled = true
 		anim_tree.set("parameters/conditions/die", true)
 		await get_tree().create_timer(2.2).timeout
 		queue_free()

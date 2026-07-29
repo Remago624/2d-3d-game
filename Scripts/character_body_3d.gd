@@ -121,30 +121,29 @@ func _on_fire_timer_timeout() -> void:
 	
 	if !result.is_empty():
 		target = result.position
-		var distance = from.distance_to(target)
-		var weight = clamp(
-			(distance - aim_assist_start) / (aim_assist_end - aim_assist_start),
-			0.0,
-			1.0
-		)
-		var camera_basis = camera.global_basis
-		var random_right = randf_range(-spread, spread)
-		var random_up = randf_range(-spread, spread)
-		var right = camera.global_transform.basis.x
-		var up = camera.global_transform.basis.y
-		var target1 = target + right * (right_offset + random_right) + up * random_up
-		var target2 = target + right * (left_offset + random_up) + up * random_right
-		
-		var target_basis1 = Basis.looking_at((target1 - gun_ray_cast.global_position).normalized())
-		var target_basis2 = Basis.looking_at((target2 - gun_ray_cast2.global_position).normalized())
+	else:
+		target = from + -camera.global_transform.basis.z * 35.0
+	
+	var camera_basis = camera.global_basis
+	var random_right = randf_range(-spread, spread)
+	var random_up = randf_range(-spread, spread)
+	var right = camera.global_transform.basis.x
+	var up = camera.global_transform.basis.y
+	var target1 = target + right * (right_offset + random_right) + up * random_up
+	var target2 = target + right * (left_offset + random_up) + up * random_right
+	
+	var target_basis1 = Basis.looking_at((target1 - gun_ray_cast.global_position).normalized())
+	var target_basis2 = Basis.looking_at((target2 - gun_ray_cast2.global_position).normalized())
 		#var target_basis1 = Basis.looking_at((target - gun_ray_cast.global_position).normalized())
 		#var target_basis2 = Basis.looking_at((target - gun_ray_cast2.global_position).normalized())
-
+	if !result.is_empty():
+		var distance = from.distance_to(target)
+		var weight = clamp((distance - aim_assist_start) / (aim_assist_end - aim_assist_start), 0.0, 1.0)
 		gun_ray_cast.global_basis = camera_basis.slerp(target_basis1, weight)
 		gun_ray_cast2.global_basis = camera_basis.slerp(target_basis2, weight)
 	else:
-		gun_ray_cast.global_basis = camera.global_basis
-		gun_ray_cast2.global_basis = camera.global_basis
+		gun_ray_cast.global_basis = target_basis1
+		gun_ray_cast2.global_basis = target_basis2
 	
 	
 	
