@@ -12,6 +12,8 @@ var state
 @onready var armature = $Armature
 const attack_range = 2.0
 var health = 200
+
+@onready var healthbar = $SubViewport/HealthBar
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#player = get_tree().get_first_node_in_group("player") this for old issue, and don't worry I solved it
@@ -52,6 +54,7 @@ func _hit_finished():
 
 func _on_area_3d_body_part_hit(dam: Variant) -> void:
 	health -= dam * player.FireDamage
+	healthbar.health = health
 	if health <= 0:
 		set_physics_process(false)
 		set_process(false)

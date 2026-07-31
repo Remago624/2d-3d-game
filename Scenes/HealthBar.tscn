@@ -25,7 +25,7 @@ offset_right = 240.0
 offset_bottom = 4.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_0idsm")
 theme_override_styles/fill = SubResource("StyleBoxFlat_id1th")
-value = 60.0
+value = 100.0
 show_percentage = false
 script = ExtResource("1_1f0m8")
 
@@ -39,7 +39,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_hn8rt")
 theme_override_styles/fill = SubResource("StyleBoxFlat_0idsm")
-value = 80.0
+value = 100.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="." unique_id=1199946558]
