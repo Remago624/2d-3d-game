@@ -15,7 +15,7 @@ const bob_freq = 2.0
 const bob_amp = 0.08
 var t_bob = 0.0
 var FireDamage = 1.0
-	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 var bullet = load("res://Scenes/bullet.tscn")
 var instance
 var instance2
@@ -106,6 +106,7 @@ func _physics_process(delta: float) -> void:
 	_crouch()
 	if !Input.is_action_pressed("maya3a"):
 		spread = s + velocity.length() * 0.02
+		
 	else:
 		spread = s
 		

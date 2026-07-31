@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cn0505j0w3fn7"]
+
+[ext_resource type="Texture2D" uid="uid://c5k0vuu57tut5" path="res://assets/forest_ground_06_diff_2k.jpg" id="1_sp0h8"]
+
+[resource]
+albedo_color = Color(0.75, 0.75, 0.75, 1)
+albedo_texture = ExtResource("1_sp0h8")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
