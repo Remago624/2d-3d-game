@@ -164,6 +164,8 @@ grow_vertical = 2
 script = ExtResource("4_wosnj")
 reticle_lines = [NodePath("Top"), NodePath("Right"), NodePath("Bottom"), NodePath("Left")]
 player_controller = NodePath("../../NavigationRegion3D/Player")
+reticle_speed = 0.05
+reticle_distance = 4.0
 
 [node name="Top" type="Line2D" parent="UI/Reticle" unique_id=921573590]
 position = Vector2(20, 20)
@@ -246,6 +248,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5556107, 0, -1.9998908)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5618305, 0, -8.518141)
 
 [node name="Spawn_timer" type="Timer" parent="." unique_id=664366119]
+wait_time = 5.0
 autostart = true
 
 [connection signal="player_died" from="NavigationRegion3D/Player" to="." method="_on_player_player_died"]
