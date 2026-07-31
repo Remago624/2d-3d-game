@@ -25,7 +25,7 @@ var instance2
 @onready var gun_ray_cast2 = $"Node3D/Camera3D/Root Scene2/RayCast3D"
 @onready var gun = $"Node3D/Camera3D/Root Scene"
 @onready var node3d = $Node3D
-var health = 100
+var health = 100.0
 var zombie_damage
 signal player_hit
 const hit_stagger = 8.0
@@ -41,8 +41,11 @@ var spread = 0.067
 
 signal player_died
 
+@onready var healthbar = $"../../HealthBar"
+
 func _ready():
 	randomize()
+	healthbar.init_health(health)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -105,6 +108,7 @@ func _physics_process(delta: float) -> void:
 		spread = s + velocity.length() * 0.02
 	else:
 		spread = s
+		
 	move_and_slide()
 
 
@@ -172,6 +176,7 @@ func hit(dir):
 	emit_signal("player_hit")
 	zombie_damage = randi_range(15, 35)
 	health -= zombie_damage
+	healthbar.health = health
 	if health <= 0:
 		emit_signal("player_died")
 		return

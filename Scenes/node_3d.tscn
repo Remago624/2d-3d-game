@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bsmcjpuc1d3ni" path="res://Scripts/world.gd" id="1_wosnj"]
 [ext_resource type="PackedScene" uid="uid://esj5q5b666yg" path="res://Scenes/gun.tscn" id="2_okq71"]
 [ext_resource type="Script" uid="uid://qb51ykw4algg" path="res://Scripts/reticle.gd" id="4_wosnj"]
+[ext_resource type="PackedScene" uid="uid://gah13fhlus1i" path="res://Scenes/HealthBar.tscn" id="5_t3l2h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -51,6 +52,12 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 
 [node name="world" type="Node3D" unique_id=902139903]
 script = ExtResource("1_wosnj")
+
+[node name="HealthBar" parent="." unique_id=1287496871 instance=ExtResource("5_t3l2h")]
+offset_left = 36.0
+offset_top = 17.0
+offset_right = 210.0
+offset_bottom = 35.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=507806798]
 environment = SubResource("Environment_noarx")
