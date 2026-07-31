@@ -109,6 +109,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		spread = s
 		
+	if Input.is_key_label_pressed(KEY_G):
+		health -= 1
+		healthbar.health = health
 	move_and_slide()
 
 

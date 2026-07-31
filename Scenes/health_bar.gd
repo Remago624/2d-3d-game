@@ -27,4 +27,6 @@ func init_health(_health):
 
 func _on_timer_timeout() -> void:
 	var tween = create_tween()
-	tween.tween_property(damage_bar, "value", health, 0.4)
+	tween.set_trans(Tween.TRANS_QUART)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(damage_bar, "value", health, 0.5)
