@@ -1,0 +1,367 @@
+[gd_scene format=3 uid="uid://dl354tquguphf"]
+
+[ext_resource type="PackedScene" uid="uid://dty0glmyqe2j6" path="res://Building Models/graveyard/altar-stone.glb" id="1_3o6kw"]
+[ext_resource type="PackedScene" uid="uid://cfjpp1sws3w8w" path="res://Building Models/graveyard/altar-wood.glb" id="2_5wd4r"]
+[ext_resource type="PackedScene" uid="uid://0tbxvwsih8qi" path="res://Building Models/graveyard/bench-damaged.glb" id="3_1h00k"]
+[ext_resource type="PackedScene" uid="uid://dmgojv7nwhul6" path="res://Building Models/graveyard/bench.glb" id="4_8jbwp"]
+[ext_resource type="PackedScene" uid="uid://cerl6ykeeygnr" path="res://Building Models/graveyard/border-pillar.glb" id="5_vx3dp"]
+[ext_resource type="PackedScene" uid="uid://7sawlyrwuj8h" path="res://Building Models/graveyard/brick-wall-curve-small.glb" id="6_kspgx"]
+[ext_resource type="PackedScene" uid="uid://by8e7yrmeivtq" path="res://Building Models/graveyard/brick-wall-curve.glb" id="7_btkch"]
+[ext_resource type="PackedScene" uid="uid://duufrlyfcr87p" path="res://Building Models/graveyard/brick-wall-end.glb" id="8_a6rm6"]
+[ext_resource type="PackedScene" uid="uid://c44qeblvw5gbf" path="res://Building Models/graveyard/brick-wall.glb" id="9_ytkpn"]
+[ext_resource type="PackedScene" uid="uid://q3gdrmly13x3" path="res://Building Models/graveyard/candle-multiple.glb" id="10_uj4ob"]
+[ext_resource type="PackedScene" uid="uid://xqknp2nrea3m" path="res://Building Models/graveyard/candle.glb" id="11_vkw0g"]
+[ext_resource type="PackedScene" uid="uid://esrnvfqw4dgx" path="res://Building Models/graveyard/character-ghost.glb" id="12_66x1h"]
+[ext_resource type="PackedScene" uid="uid://1r4ob6f1ivmr" path="res://Building Models/graveyard/character-keeper.glb" id="13_88s0f"]
+[ext_resource type="PackedScene" uid="uid://bj4x4v4wajdeo" path="res://Building Models/graveyard/character-skeleton.glb" id="14_kr57t"]
+[ext_resource type="PackedScene" uid="uid://crdl4rre6qrdf" path="res://Building Models/graveyard/character-vampire.glb" id="15_06rf1"]
+[ext_resource type="PackedScene" uid="uid://y2fya01cqj7" path="res://Building Models/graveyard/character-zombie.glb" id="16_3cfe8"]
+[ext_resource type="PackedScene" uid="uid://c0logaumeqtvs" path="res://Building Models/graveyard/coffin-old.glb" id="17_vu70n"]
+[ext_resource type="PackedScene" uid="uid://bc8hp0nb5otwu" path="res://Building Models/graveyard/coffin.glb" id="18_ahvw2"]
+[ext_resource type="PackedScene" uid="uid://y8so80ywnkwy" path="res://Building Models/graveyard/column-large.glb" id="19_lgum5"]
+[ext_resource type="PackedScene" uid="uid://cuwy1qhx8c6qh" path="res://Building Models/graveyard/cross-column.glb" id="20_o68qk"]
+[ext_resource type="PackedScene" uid="uid://b7c3lx0nt5ivl" path="res://Building Models/graveyard/cross-wood.glb" id="21_f2par"]
+[ext_resource type="PackedScene" uid="uid://doqeiovunlnim" path="res://Building Models/graveyard/cross.glb" id="22_rtoxf"]
+[ext_resource type="PackedScene" uid="uid://f5yy46hx7fmn" path="res://Building Models/graveyard/crypt-a.glb" id="23_f8yq7"]
+[ext_resource type="PackedScene" uid="uid://dwepwtf6bqi0" path="res://Building Models/graveyard/crypt-b.glb" id="24_0w1gr"]
+[ext_resource type="PackedScene" uid="uid://dx60i4qvqnf7u" path="res://Building Models/graveyard/crypt-door.glb" id="25_0nhlk"]
+[ext_resource type="PackedScene" uid="uid://d12n28ijc613k" path="res://Building Models/graveyard/crypt-large-door.glb" id="26_mxio6"]
+[ext_resource type="PackedScene" uid="uid://dd3k0pfub1kws" path="res://Building Models/graveyard/crypt-large-roof.glb" id="27_nc86v"]
+[ext_resource type="PackedScene" uid="uid://do8uvqppq8lcu" path="res://Building Models/graveyard/crypt-large.glb" id="28_hejwy"]
+[ext_resource type="PackedScene" uid="uid://3pr6hb30wx6h" path="res://Building Models/graveyard/crypt-small-roof.glb" id="29_f14l4"]
+[ext_resource type="PackedScene" uid="uid://buxfg2c6k2gik" path="res://Building Models/graveyard/crypt-small.glb" id="30_mqhta"]
+[ext_resource type="PackedScene" uid="uid://co2hni0icvf7p" path="res://Building Models/graveyard/crypt.glb" id="31_he3rq"]
+[ext_resource type="PackedScene" uid="uid://67p6v142s0x4" path="res://Building Models/graveyard/debris-wood.glb" id="32_xtlme"]
+[ext_resource type="PackedScene" uid="uid://dqf488647frwn" path="res://Building Models/graveyard/debris.glb" id="33_cvo2y"]
+[ext_resource type="PackedScene" uid="uid://258jovr8ta1s" path="res://Building Models/graveyard/detail-bowl.glb" id="34_sj6ln"]
+[ext_resource type="PackedScene" uid="uid://4hajwqakn2ti" path="res://Building Models/graveyard/detail-chalice.glb" id="35_v3vc3"]
+[ext_resource type="PackedScene" uid="uid://std81db2p6wu" path="res://Building Models/graveyard/detail-plate.glb" id="36_3phiu"]
+[ext_resource type="PackedScene" uid="uid://b4pw1tbuchxxe" path="res://Building Models/graveyard/fence-damaged.glb" id="37_g401j"]
+[ext_resource type="PackedScene" uid="uid://dj06jum8kw4oh" path="res://Building Models/graveyard/fence-gate.glb" id="38_3mbm8"]
+[ext_resource type="PackedScene" uid="uid://da3y5vlfmson3" path="res://Building Models/graveyard/fence.glb" id="39_gq7e2"]
+[ext_resource type="PackedScene" uid="uid://c8ien18weeh4f" path="res://Building Models/graveyard/fire-basket.glb" id="40_nqhv5"]
+[ext_resource type="PackedScene" uid="uid://w184732dtid6" path="res://Building Models/graveyard/grave-border.glb" id="41_dbc1t"]
+[ext_resource type="PackedScene" uid="uid://7mak3r7kk70d" path="res://Building Models/graveyard/grave.glb" id="42_w4y5g"]
+[ext_resource type="PackedScene" uid="uid://bh6yffm61b3x0" path="res://Building Models/graveyard/gravestone-bevel.glb" id="43_wyq24"]
+[ext_resource type="PackedScene" uid="uid://0dfi7cpvhw0s" path="res://Building Models/graveyard/gravestone-broken.glb" id="44_hymvt"]
+[ext_resource type="PackedScene" uid="uid://bg4tqmsbgqwgs" path="res://Building Models/graveyard/gravestone-cross-large.glb" id="45_iodgb"]
+[ext_resource type="PackedScene" uid="uid://c4cg7dn8scx6d" path="res://Building Models/graveyard/gravestone-cross.glb" id="46_a8dmu"]
+[ext_resource type="PackedScene" uid="uid://ccejsltefoy6b" path="res://Building Models/graveyard/gravestone-debris.glb" id="47_cuffx"]
+[ext_resource type="PackedScene" uid="uid://cfcarx546oeli" path="res://Building Models/graveyard/gravestone-decorative.glb" id="48_fdfcx"]
+[ext_resource type="PackedScene" uid="uid://c5y6ylyourxx5" path="res://Building Models/graveyard/gravestone-roof.glb" id="49_fakba"]
+[ext_resource type="PackedScene" uid="uid://bv5ui4w1uhtcg" path="res://Building Models/graveyard/gravestone-round.glb" id="50_pqfoc"]
+[ext_resource type="PackedScene" uid="uid://b0aayxfbrjals" path="res://Building Models/graveyard/gravestone-wide.glb" id="51_ebd6k"]
+[ext_resource type="PackedScene" uid="uid://b37xv0w77vm04" path="res://Building Models/graveyard/hay-bale-bundled.glb" id="52_y6xvc"]
+[ext_resource type="PackedScene" uid="uid://bppuja8yjrla3" path="res://Building Models/graveyard/hay-bale.glb" id="53_x2lch"]
+[ext_resource type="PackedScene" uid="uid://c1vomtl577i8a" path="res://Building Models/graveyard/iron-fence-bar.glb" id="54_w045r"]
+[ext_resource type="PackedScene" uid="uid://duvjaljf3u3ww" path="res://Building Models/graveyard/iron-fence-border-column.glb" id="55_j4eye"]
+[ext_resource type="PackedScene" uid="uid://cghu4qlvk8e5j" path="res://Building Models/graveyard/iron-fence-border-curve.glb" id="56_xs45g"]
+[ext_resource type="PackedScene" uid="uid://d1jcf1sywi7y5" path="res://Building Models/graveyard/iron-fence-border-gate.glb" id="57_nvln7"]
+[ext_resource type="PackedScene" uid="uid://b8ch7nemyuu8t" path="res://Building Models/graveyard/iron-fence-border.glb" id="58_qutwu"]
+[ext_resource type="PackedScene" uid="uid://bv7o1l5rvymch" path="res://Building Models/graveyard/iron-fence-curve.glb" id="59_s3reu"]
+[ext_resource type="PackedScene" uid="uid://wrixp886d0q2" path="res://Building Models/graveyard/iron-fence-damaged.glb" id="60_8dyxq"]
+[ext_resource type="PackedScene" uid="uid://djcujyy8gy8pv" path="res://Building Models/graveyard/iron-fence.glb" id="61_iew4f"]
+[ext_resource type="PackedScene" uid="uid://d03ce68nelolq" path="res://Building Models/graveyard/lantern-candle.glb" id="62_u6x5e"]
+[ext_resource type="PackedScene" uid="uid://qoocl0b2hwd" path="res://Building Models/graveyard/lantern-glass.glb" id="63_jn4gx"]
+[ext_resource type="PackedScene" uid="uid://be3mcykk6ml65" path="res://Building Models/graveyard/lightpost-all.glb" id="64_ewk0v"]
+[ext_resource type="PackedScene" uid="uid://o3q2j6pqe6vb" path="res://Building Models/graveyard/lightpost-double.glb" id="65_xsel0"]
+[ext_resource type="PackedScene" uid="uid://bs4fua12copqb" path="res://Building Models/graveyard/lightpost-single.glb" id="66_simck"]
+[ext_resource type="PackedScene" uid="uid://d0f6wava8d4gh" path="res://Building Models/graveyard/pillar-large.glb" id="67_q5p1x"]
+[ext_resource type="PackedScene" uid="uid://dxb81qh1n8fv6" path="res://Building Models/graveyard/pillar-obelisk.glb" id="68_v1kaw"]
+[ext_resource type="PackedScene" uid="uid://b8nprqbc676kp" path="res://Building Models/graveyard/pillar-small.glb" id="69_xe8sv"]
+[ext_resource type="PackedScene" uid="uid://fkrkk35lraoe" path="res://Building Models/graveyard/pillar-square.glb" id="70_jdecb"]
+[ext_resource type="PackedScene" uid="uid://cmnupmpb5yaty" path="res://Building Models/graveyard/pine-crooked.glb" id="71_oqx83"]
+[ext_resource type="PackedScene" uid="uid://detdv7e1mmvgx" path="res://Building Models/graveyard/pine-fall-crooked.glb" id="72_jtqfg"]
+[ext_resource type="PackedScene" uid="uid://d0ub6pgcl1tug" path="res://Building Models/graveyard/pine-fall.glb" id="73_f4htv"]
+[ext_resource type="PackedScene" uid="uid://ca3d0ogokpgpv" path="res://Building Models/graveyard/pine.glb" id="74_3pq1f"]
+[ext_resource type="PackedScene" uid="uid://bb27kba31f11f" path="res://Building Models/graveyard/pumpkin-carved.glb" id="75_h1gys"]
+[ext_resource type="PackedScene" uid="uid://bo4145rhi5p2u" path="res://Building Models/graveyard/pumpkin-tall-carved.glb" id="76_k27fu"]
+[ext_resource type="PackedScene" uid="uid://cw0iix8o8i0il" path="res://Building Models/graveyard/pumpkin-tall.glb" id="77_cd4so"]
+[ext_resource type="PackedScene" uid="uid://dhp3dciqamw72" path="res://Building Models/graveyard/pumpkin.glb" id="78_r32nu"]
+[ext_resource type="PackedScene" uid="uid://0t7tmew80aof" path="res://Building Models/graveyard/road.glb" id="79_xj0mf"]
+[ext_resource type="PackedScene" uid="uid://b60ltam6cn4ip" path="res://Building Models/graveyard/rocks-tall.glb" id="80_31bha"]
+[ext_resource type="PackedScene" uid="uid://bq2go8sysavy1" path="res://Building Models/graveyard/rocks.glb" id="81_t5dsb"]
+[ext_resource type="PackedScene" uid="uid://dbk43rapp5oxm" path="res://Building Models/graveyard/shovel-dirt.glb" id="82_lpmq1"]
+[ext_resource type="PackedScene" uid="uid://buhdn1niext80" path="res://Building Models/graveyard/shovel.glb" id="83_mdhgj"]
+[ext_resource type="PackedScene" uid="uid://pa4d06v417vd" path="res://Building Models/graveyard/stone-wall-column.glb" id="84_ufvhc"]
+[ext_resource type="PackedScene" uid="uid://vb6p2bo0802c" path="res://Building Models/graveyard/stone-wall-curve.glb" id="85_l1hln"]
+[ext_resource type="PackedScene" uid="uid://cgmw6t4iu5ce8" path="res://Building Models/graveyard/stone-wall-damaged.glb" id="86_5uo2n"]
+[ext_resource type="PackedScene" uid="uid://ciqbccmr3myum" path="res://Building Models/graveyard/stone-wall.glb" id="87_es8s2"]
+[ext_resource type="PackedScene" uid="uid://bj4j8v3il8rm5" path="res://Building Models/graveyard/trunk-long.glb" id="88_8f6ys"]
+[ext_resource type="PackedScene" uid="uid://bu0gtpfymulby" path="res://Building Models/graveyard/trunk.glb" id="89_whexr"]
+[ext_resource type="PackedScene" uid="uid://c68g0t6vmuhhc" path="res://Building Models/graveyard/urn-round.glb" id="90_2wjcp"]
+[ext_resource type="PackedScene" uid="uid://os4bd2m88yxc" path="res://Building Models/graveyard/urn-square.glb" id="91_qwjtn"]
+
+[node name="Node3D" type="Node3D" unique_id=156678006]
+
+[node name="altar-stone2" parent="." unique_id=1590609578 instance=ExtResource("1_3o6kw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17)
+
+[node name="altar-wood2" parent="." unique_id=1363409992 instance=ExtResource("2_5wd4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 17)
+
+[node name="bench-damaged2" parent="." unique_id=1388400115 instance=ExtResource("3_1h00k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 17)
+
+[node name="bench2" parent="." unique_id=2101433852 instance=ExtResource("4_8jbwp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 17)
+
+[node name="border-pillar2" parent="." unique_id=473230431 instance=ExtResource("5_vx3dp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18)
+
+[node name="brick-wall-curve-small2" parent="." unique_id=243453081 instance=ExtResource("6_kspgx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 18)
+
+[node name="brick-wall-curve2" parent="." unique_id=680622331 instance=ExtResource("7_btkch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 18)
+
+[node name="brick-wall-end2" parent="." unique_id=2065326520 instance=ExtResource("8_a6rm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 18)
+
+[node name="brick-wall2" parent="." unique_id=1610433399 instance=ExtResource("9_ytkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+
+[node name="candle-multiple2" parent="." unique_id=498127094 instance=ExtResource("10_uj4ob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 19)
+
+[node name="candle2" parent="." unique_id=689424116 instance=ExtResource("11_vkw0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 19)
+
+[node name="character-ghost2" parent="." unique_id=1135626411 instance=ExtResource("12_66x1h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 19)
+
+[node name="character-keeper2" parent="." unique_id=250405702 instance=ExtResource("13_88s0f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 13)
+
+[node name="character-skeleton2" parent="." unique_id=1713898670 instance=ExtResource("14_kr57t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 14)
+
+[node name="character-vampire2" parent="." unique_id=698417403 instance=ExtResource("15_06rf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 15)
+
+[node name="character-zombie2" parent="." unique_id=2091950759 instance=ExtResource("16_3cfe8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 23)
+
+[node name="coffin-old2" parent="." unique_id=325367699 instance=ExtResource("17_vu70n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+
+[node name="coffin2" parent="." unique_id=982846530 instance=ExtResource("18_ahvw2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 25)
+
+[node name="column-large2" parent="." unique_id=1094611885 instance=ExtResource("19_lgum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 25)
+
+[node name="cross-column2" parent="." unique_id=1985205845 instance=ExtResource("20_o68qk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 25)
+
+[node name="cross-wood2" parent="." unique_id=926270723 instance=ExtResource("21_f2par")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 26)
+
+[node name="cross2" parent="." unique_id=1247158019 instance=ExtResource("22_rtoxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 26)
+
+[node name="crypt-a2" parent="." unique_id=1831918979 instance=ExtResource("23_f8yq7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 26)
+
+[node name="crypt-b2" parent="." unique_id=2023568043 instance=ExtResource("24_0w1gr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 26)
+
+[node name="crypt-door2" parent="." unique_id=924815076 instance=ExtResource("25_0nhlk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 27)
+
+[node name="crypt-large-door2" parent="." unique_id=43498335 instance=ExtResource("26_mxio6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 20)
+
+[node name="crypt-large-roof2" parent="." unique_id=555643116 instance=ExtResource("27_nc86v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21)
+
+[node name="crypt-large2" parent="." unique_id=1834534529 instance=ExtResource("28_hejwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 21)
+
+[node name="crypt-small-roof2" parent="." unique_id=271759551 instance=ExtResource("29_f14l4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 21)
+
+[node name="crypt-small2" parent="." unique_id=374591227 instance=ExtResource("30_mqhta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 21)
+
+[node name="crypt2" parent="." unique_id=71361013 instance=ExtResource("31_he3rq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22)
+
+[node name="debris-wood2" parent="." unique_id=259926868 instance=ExtResource("32_xtlme")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 22)
+
+[node name="debris2" parent="." unique_id=1820889526 instance=ExtResource("33_cvo2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 22)
+
+[node name="detail-bowl2" parent="." unique_id=1075355008 instance=ExtResource("34_sj6ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 22)
+
+[node name="detail-chalice2" parent="." unique_id=973650271 instance=ExtResource("35_v3vc3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23)
+
+[node name="detail-plate2" parent="." unique_id=618859055 instance=ExtResource("36_3phiu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 23)
+
+[node name="fence-damaged2" parent="." unique_id=1225003752 instance=ExtResource("37_g401j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 23)
+
+[node name="fence-gate2" parent="." unique_id=921625846 instance=ExtResource("38_3mbm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 23)
+
+[node name="fence2" parent="." unique_id=1585308209 instance=ExtResource("39_gq7e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="fire-basket2" parent="." unique_id=566918939 instance=ExtResource("40_nqhv5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="grave-border2" parent="." unique_id=533163237 instance=ExtResource("41_dbc1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="grave2" parent="." unique_id=1251510513 instance=ExtResource("42_w4y5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="gravestone-bevel2" parent="." unique_id=1488788858 instance=ExtResource("43_wyq24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="gravestone-broken2" parent="." unique_id=1145995014 instance=ExtResource("44_hymvt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+
+[node name="gravestone-cross-large2" parent="." unique_id=1826500439 instance=ExtResource("45_iodgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="gravestone-cross2" parent="." unique_id=1781256899 instance=ExtResource("46_a8dmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
+
+[node name="gravestone-debris2" parent="." unique_id=539097781 instance=ExtResource("47_cuffx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5)
+
+[node name="gravestone-decorative2" parent="." unique_id=327639117 instance=ExtResource("48_fdfcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+
+[node name="gravestone-roof2" parent="." unique_id=567630803 instance=ExtResource("49_fakba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="gravestone-round2" parent="." unique_id=1300085588 instance=ExtResource("50_pqfoc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+
+[node name="gravestone-wide2" parent="." unique_id=1694215443 instance=ExtResource("51_ebd6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+
+[node name="hay-bale-bundled2" parent="." unique_id=1349904961 instance=ExtResource("52_y6xvc")]
+
+[node name="hay-bale2" parent="." unique_id=833605424 instance=ExtResource("53_x2lch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="iron-fence-bar2" parent="." unique_id=1955021592 instance=ExtResource("54_w045r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="iron-fence-border-column2" parent="." unique_id=1440046676 instance=ExtResource("55_j4eye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="iron-fence-border-curve2" parent="." unique_id=1776898540 instance=ExtResource("56_xs45g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="iron-fence-border-gate2" parent="." unique_id=594809792 instance=ExtResource("57_nvln7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="iron-fence-border2" parent="." unique_id=1485866918 instance=ExtResource("58_qutwu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
+
+[node name="iron-fence-curve2" parent="." unique_id=1550726996 instance=ExtResource("59_s3reu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)
+
+[node name="iron-fence-damaged2" parent="." unique_id=569884901 instance=ExtResource("60_8dyxq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="iron-fence2" parent="." unique_id=1247467296 instance=ExtResource("61_iew4f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="lantern-candle2" parent="." unique_id=175931588 instance=ExtResource("62_u6x5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="lantern-glass2" parent="." unique_id=773105632 instance=ExtResource("63_jn4gx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+
+[node name="lightpost-all2" parent="." unique_id=2144247381 instance=ExtResource("64_ewk0v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="lightpost-double2" parent="." unique_id=25337195 instance=ExtResource("65_xsel0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="lightpost-single2" parent="." unique_id=472058554 instance=ExtResource("66_simck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 10)
+
+[node name="pillar-large2" parent="." unique_id=2014570784 instance=ExtResource("67_q5p1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 10)
+
+[node name="pillar-obelisk2" parent="." unique_id=1051205372 instance=ExtResource("68_v1kaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 10)
+
+[node name="pillar-small2" parent="." unique_id=1239623175 instance=ExtResource("69_xe8sv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+
+[node name="pillar-square2" parent="." unique_id=1211699838 instance=ExtResource("70_jdecb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 11)
+
+[node name="pine-crooked2" parent="." unique_id=253676828 instance=ExtResource("71_oqx83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 11)
+
+[node name="pine-fall-crooked2" parent="." unique_id=483867203 instance=ExtResource("72_jtqfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 11)
+
+[node name="pine-fall2" parent="." unique_id=1397602238 instance=ExtResource("73_f4htv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="pine2" parent="." unique_id=154412119 instance=ExtResource("74_3pq1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 12)
+
+[node name="pumpkin-carved2" parent="." unique_id=1036044165 instance=ExtResource("75_h1gys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="pumpkin-tall-carved2" parent="." unique_id=632355089 instance=ExtResource("76_k27fu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 12)
+
+[node name="pumpkin-tall2" parent="." unique_id=362444650 instance=ExtResource("77_cd4so")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
+
+[node name="pumpkin2" parent="." unique_id=825881109 instance=ExtResource("78_r32nu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 13)
+
+[node name="road2" parent="." unique_id=1445335661 instance=ExtResource("79_xj0mf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 13)
+
+[node name="rocks-tall2" parent="." unique_id=1740839094 instance=ExtResource("80_31bha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
+
+[node name="rocks2" parent="." unique_id=1508590540 instance=ExtResource("81_t5dsb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 7)
+
+[node name="shovel-dirt2" parent="." unique_id=1283808986 instance=ExtResource("82_lpmq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 7)
+
+[node name="shovel2" parent="." unique_id=2097366458 instance=ExtResource("83_mdhgj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 7)
+
+[node name="stone-wall-column2" parent="." unique_id=377209235 instance=ExtResource("84_ufvhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7)
+
+[node name="stone-wall-curve2" parent="." unique_id=1253227684 instance=ExtResource("85_l1hln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 8)
+
+[node name="stone-wall-damaged2" parent="." unique_id=2102885215 instance=ExtResource("86_5uo2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 8)
+
+[node name="stone-wall2" parent="." unique_id=1590493735 instance=ExtResource("87_es8s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 8)
+
+[node name="trunk-long2" parent="." unique_id=904318638 instance=ExtResource("88_8f6ys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 8)
+
+[node name="trunk2" parent="." unique_id=25308936 instance=ExtResource("89_whexr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9)
+
+[node name="urn-round2" parent="." unique_id=2041227682 instance=ExtResource("90_2wjcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 9)
+
+[node name="urn-square2" parent="." unique_id=1405865882 instance=ExtResource("91_qwjtn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 9)

@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://cn0505j0w3fn7" path="res://assets/new_standard_material_3d.tres" id="3_ifh66"]
 [ext_resource type="Script" uid="uid://qb51ykw4algg" path="res://Scripts/reticle.gd" id="4_wosnj"]
 [ext_resource type="PackedScene" uid="uid://gah13fhlus1i" path="res://Scenes/HealthBar.tscn" id="5_t3l2h"]
+[ext_resource type="MeshLibrary" uid="uid://bdmktywvrq8j0" path="res://Building Models/tiles.tres" id="8_aeo3b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -225,6 +226,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -0.25028992, 0)
 use_collision = true
 size = Vector3(6, 0.499, 6)
 material = SubResource("StandardMaterial3D_fdyoq")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=88187344]
+mesh_library = ExtResource("8_aeo3b")
+cell_center_y = false
 
 [connection signal="player_died" from="NavigationRegion3D/Player" to="." method="_on_player_player_died"]
 [connection signal="player_hit" from="NavigationRegion3D/Player" to="." method="_on_player_player_hit"]
