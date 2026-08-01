@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cwbfgfsxpac6g"]
+
+[ext_resource type="Script" uid="uid://bawk1jh7r43r8" path="res://addons/builder_tools/dock.gd" id="1_cwvtv"]
+
+[node name="Dock" type="VBoxContainer" unique_id=522214463]
+script = ExtResource("1_cwvtv")
+
+[node name="Label" type="Label" parent="." unique_id=423584952]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="." unique_id=1661764463]
+layout_mode = 2
+
+[node name="ArrangeByName" type="Button" parent="." unique_id=375859226]
+layout_mode = 2
+text = "ArrangeByName"
+
+[node name="ArrangeGrid" type="Button" parent="." unique_id=1023842276]
+layout_mode = 2
+text = "ArrangeGrid"
+
+[node name="HSeparator2" type="HSeparator" parent="." unique_id=1723773990]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="." unique_id=699788249]
+layout_mode = 2
+
+[node name="SpacingX" type="SpinBox" parent="." unique_id=2091449894]
+layout_mode = 2
+
+[node name="SpacingZ" type="SpinBox" parent="." unique_id=497001631]
+layout_mode = 2
+
+[node name="Columns" type="SpinBox" parent="." unique_id=1283230952]
+layout_mode = 2

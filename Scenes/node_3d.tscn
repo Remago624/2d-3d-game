@@ -60,6 +60,7 @@ shadow_enabled = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=913445368]
 navigation_mesh = SubResource("NavigationMesh_hn8rt")
+enabled = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=156980879]
 mesh = SubResource("PlaneMesh_2nw4w")

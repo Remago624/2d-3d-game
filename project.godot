@@ -26,7 +26,7 @@ version_control/fire_damage=0.0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/builder_tools/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
 
 [global_group]
 

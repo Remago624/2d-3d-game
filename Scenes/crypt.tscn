@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://daswfhw2vr1l6"]
+
+[ext_resource type="PackedScene" uid="uid://c70ngnfcl0oth" path="res://Building Models/Crypt/crypt.glb" id="1_kia84"]
+[ext_resource type="PackedScene" uid="uid://djwmhunmqcnmj" path="res://Building Models/Crypt/crypt-door.glb" id="2_26lhc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_71r7b"]
+points = PackedVector3Array(-0.2980501, 0, -0.55799997, -0.2980501, 0.12395713, -0.55799997, 0.29797962, 0, -0.55799997, -0.35999998, 0, -0.49606067, -0.2891699, 0.61692125, -0.50032103, -7.048249e-05, 0.73156905, -0.50032103, 0.29797962, 0.12395713, -0.55799997, -0.35999998, 0.12395713, -0.49606067, 0.35999992, 0, -0.49606067, -0.35999998, 0, 0.4959514, -0.3356852, 0.5985174, -0.45039818, 0.3355442, 0.5985174, -0.45039818, 0.28909943, 0.61692125, -0.50032103, -7.048249e-05, 0.73156905, 0.5002117, 0.35999992, 0.12395713, -0.49606067, -0.35999998, 0.12395713, 0.4959514, 0.35999992, 0, 0.4959514, -0.2980501, 0, 0.55799997, -0.3356852, 0.5985174, 0.4501797, 0.3355442, 0.5985174, 0.4501797, -0.2891699, 0.61692125, 0.5002117, -0.2980501, 0.12395713, 0.55799997, 0.29797962, 0.12395713, 0.55799997, 0.28909943, 0.61692125, 0.5002117, 0.35999992, 0.12395713, 0.4959514, 0.29797962, 0, 0.55799997)
+
+[node name="crypt" unique_id=1468106306 instance=ExtResource("1_kia84")]
+
+[node name="crypt" parent="." index="0" unique_id=1028819592]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1629191580]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_71r7b")
+
+[node name="crypt-door2" parent="." index="2" unique_id=1116439962 instance=ExtResource("2_26lhc")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.01723665, -0.10163319, 2.7290733)

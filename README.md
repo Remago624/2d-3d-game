@@ -8,3 +8,5 @@ Zombie character used (Romero): https://www.mixamo.com/#/?page=1&query=Romero&ty
 
 Gun model by Quaternius:
 https://poly.pizza/m/K2lXTYFSLC
+
+ground texture by Charlotte Baglioni: https://polyhaven.com/a/forest_ground_06
