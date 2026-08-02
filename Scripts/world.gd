@@ -9,7 +9,9 @@ var instance
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
-
+	$"NavigationRegion3D/crypt-small/crypt-door2/AnimationPlayer".play("open")
+	$"NavigationRegion3D/crypt-large/crypt-large-door2/AnimationPlayer".play("open")
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -31,9 +33,9 @@ func _on_spawn_timer_timeout() -> void:
 	instance = zombie.instantiate()
 	
 	instance.position = spawn_point + Vector3(
-	randf_range(-2.0, 2.0),
+	randf_range(-0.1, 0.1),
 	0,
-	randf_range(-2.0, 2.0))
+	randf_range(-0.1, 0.1))
 	#instance.position = spawn_point
 	nav_region.add_child(instance)
 
