@@ -1,21 +1,16 @@
 extends CharacterBody3D
-
-const speed = 4.0
-var player = null
-var state
 @export var player_path := "/root/world/NavigationRegion3D/Player"
+const attack_range = 2.0
+const sprint_range = 8.0
+var health = 200
 @onready var new_agent = $NavigationAgent3D
 @onready var anim_tree = $AnimationTree
-@onready var anim_player2 = $AnimationPlayer2
-@onready var Skeleton = $Armature/Skeleton3D
-@onready var armature = $Armature
-const attack_range = 2.0
-var health = 200
-
+var state
+var player = null
+var speed = 5
 @onready var healthbar = $SubViewport/HealthBar
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#player = get_tree().get_first_node_in_group("player") this for old issue, and don't worry I solved it
 	player = get_node(player_path)
 	state = anim_tree.get("parameters/playback")
 
@@ -24,27 +19,31 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	velocity = Vector3.ZERO
 	match state.get_current_node():
-		"running":
+		"walk":
 			new_agent.set_target_position(player.global_transform.origin)
 			var nvp = new_agent.get_next_path_position()
 			velocity = (nvp - global_transform.origin).normalized() * speed
 			rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, -velocity.z), delta * 10.0)
-		"attack":
+		"sprint":
+			new_agent.set_target_position(player.global_transform.origin)
+			var nvp = new_agent.get_next_path_position()
+			velocity = (nvp - global_transform.origin).normalized() * (speed + 1.5)
+			rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, -velocity.z), delta * 10.0)
+		"attack-kick-left":
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
-		"attack2":
+		"attack-melee-right":
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
 		
-
-	
-	#look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
-	
 	anim_tree.set("parameters/conditions/attack", _target_in_range())
+	anim_tree.set("parameters/conditions/sprint", _target_in_Srange())
 	anim_tree.set("parameters/conditions/run", !_target_in_range())
-
 	move_and_slide()
 
 func _target_in_range():
 	return global_position.distance_to(player.global_position) < attack_range
+func _target_in_Srange():
+	return global_position.distance_to(player.global_position) < sprint_range
+
 
 func _hit_finished():
 	if global_position.distance_to(player.global_position) < attack_range + 1.0 :
@@ -53,7 +52,7 @@ func _hit_finished():
 		player.hit(dir)
 
 
-func _on_area_3d_body_part_hit(dam: Variant) -> void:
+func _on_area_3d_ghost_hit(dam: Variant) -> void:
 	health -= dam * player.FireDamage
 	healthbar.health = health
 	if health <= 0:
@@ -71,4 +70,3 @@ func _on_area_3d_body_part_hit(dam: Variant) -> void:
 		anim_tree.set("parameters/conditions/die", true)
 		await get_tree().create_timer(2.2).timeout
 		queue_free()
-		

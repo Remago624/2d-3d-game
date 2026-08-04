@@ -92,6 +92,10 @@
 [ext_resource type="PackedScene" uid="uid://c68g0t6vmuhhc" path="res://Building Models/graveyard/urn-round.glb" id="90_2wjcp"]
 [ext_resource type="PackedScene" uid="uid://os4bd2m88yxc" path="res://Building Models/graveyard/urn-square.glb" id="91_qwjtn"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hn8rt"]
+radius = 0.2631836
+height = 0.82289124
+
 [node name="Node3D" type="Node3D" unique_id=156678006]
 
 [node name="altar-stone2" parent="." unique_id=1590609578 instance=ExtResource("1_3o6kw")]
@@ -129,6 +133,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 19)
 
 [node name="character-ghost2" parent="." unique_id=1135626411 instance=ExtResource("12_66x1h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 19)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="character-ghost2" unique_id=959264707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35894012, 0)
+shape = SubResource("CapsuleShape3D_hn8rt")
 
 [node name="character-keeper2" parent="." unique_id=250405702 instance=ExtResource("13_88s0f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 13)
