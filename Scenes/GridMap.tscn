@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://b8ch7nemyuu8t" path="res://Building Models/graveyard/iron-fence-border.glb" id="37_biww5"]
 [ext_resource type="PackedScene" uid="uid://cmnupmpb5yaty" path="res://Building Models/graveyard/pine-crooked.glb" id="38_m74xu"]
 [ext_resource type="PackedScene" uid="uid://ca3d0ogokpgpv" path="res://Building Models/graveyard/pine.glb" id="39_giqbd"]
+[ext_resource type="PackedScene" uid="uid://bs4fua12copqb" path="res://Building Models/graveyard/lightpost-single.glb" id="41_biww5"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n6joo"]
 points = PackedVector3Array(0.675, 0, 0.65006185, 0.6109093, 1, 0.5250658, 0.6554424, 0.2999217, 0.6355337, 0.5938625, 1, 0.6189499, 0.62491673, 0, 0.70008767, 0.675, 0, -0.6501989, 0.6109093, 1, -0.5252028, 0.49990696, 1, 0.63594496, 0.6103807, 0.2999217, 0.68048847, -0.62504894, 0, 0.70008767, 0.62491673, 0, -0.70008767, 0.5938625, 1, -0.6190869, 0.6554424, 0.2999217, -0.63567084, -0.50003916, 1, 0.63594496, -0.675, 0, 0.65006185, -0.6105129, 0.2999217, 0.68048847, -0.59399474, 1, 0.6189499, 0.6103807, 0.2999217, -0.68062556, -0.62504894, 0, -0.70008767, 0.49990696, 1, -0.636082, -0.6555746, 0.2999217, 0.6355337, -0.61104155, 1, 0.5250658, -0.675, 0, -0.6501989, -0.59399474, 1, -0.6190869, -0.6105129, 0.2999217, -0.68062556, -0.50003916, 1, -0.636082, -0.61104155, 1, -0.5252028, -0.6555746, 0.2999217, -0.63567084)
@@ -196,6 +197,20 @@ height = 2.026547
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m74xu"]
 radius = 0.22314453
 height = 2.2203946
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_biww5"]
+points = PackedVector3Array(2.3841858e-07, 1.1638134, 0.3632775, 0.07394683, 1.1638134, 0.35454106, 2.3841858e-07, 1.207331, 0.33497506, -0.073966786, 1.1638134, 0.35454106, 2.3841858e-07, 0.92886865, 0.3632775, 0.095693424, 1.1638134, 0.33279094, 0.06524001, 1.207331, 0.32410002, 0.07394683, 0.92886865, 0.35454106, -2.0198524e-05, 1.2665939, 0.29115632, -0.06525998, 1.207331, 0.32410002, -0.095713384, 1.1638134, 0.33279094, -0.073966786, 0.92886865, 0.35454106, -0.07643985, -5.639933e-17, 0.10154816, 0.07641989, -5.639933e-17, 0.10154816, 0.10440023, 1.1638134, 0.25884968, 0.07611331, 1.207331, 0.25884968, 0.095693424, 0.92886865, 0.33279094, 0.027674004, 1.2665939, 0.2865151, -0.027693965, 1.2665939, 0.2865151, -0.07613327, 1.207331, 0.25884968, -0.104399756, 1.1638134, 0.25884968, -0.095713384, 0.92886865, 0.33279094, -0.10157924, -5.639933e-17, 0.07638537, 0.10155928, -5.639933e-17, 0.07638537, 0.07674691, 1.1588541, -1.3023615e-05, 0.05559303, 1.2632465, -1.3023615e-05, 0.10440023, 0.92886865, 0.25884968, 0.10155928, -5.639933e-17, -0.07645692, 0.032272667, 1.2665939, 0.25884968, -0.032292634, 1.2665939, 0.25884968, -0.055612992, 1.2632465, -1.3023615e-05, -0.07676686, 1.1588541, -1.3023615e-05, -0.10157924, -5.639933e-17, -0.07645692, -0.104399756, 0.92886865, 0.25884968, 0.038363352, 1.1588541, -0.06649192, 0.027796641, 1.2632465, -0.04819998, 0.027674004, 1.2665939, 0.23118427, 0.07641989, -5.639933e-17, -0.101574205, -0.027693965, 1.2665939, 0.23118427, -0.027816594, 1.2632465, -0.04819998, -0.038383313, 1.1588541, -0.06649192, -0.07643985, -5.639933e-17, -0.101574205, -2.0198524e-05, 1.2665939, 0.22658855)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fdyoq"]
+top_radius = 0.07
+bottom_radius = 0.07
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sr8vn"]
+albedo_color = Color(1, 0.77952754, 0.26771653, 1)
+emission_enabled = true
+emission = Color(1, 0.78039217, 0.26666668, 1)
+emission_energy_multiplier = 6.0
 
 [node name="Node3D" type="Node3D" unique_id=1889090860]
 
@@ -454,6 +469,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017912388, 0.95659554, 0)
 shape = SubResource("CapsuleShape3D_m74xu")
 
+[node name="lightpost-single2" parent="." unique_id=472058554 instance=ExtResource("41_biww5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 7)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lightpost-single2" unique_id=1515517185]
+shape = SubResource("ConvexPolygonShape3D_biww5")
+
+[node name="LightEmision" type="MeshInstance3D" parent="lightpost-single2" unique_id=988756103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0421298, 0.25921106)
+mesh = SubResource("CylinderMesh_fdyoq")
+surface_material_override/0 = SubResource("StandardMaterial3D_sr8vn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lightpost-single2/LightEmision" unique_id=900175335]
+transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0, 1.1920929e-07, 0)
+light_color = Color(0.84313726, 0.7137255, 0.36078432, 1)
+light_energy = 5.0
+light_volumetric_fog_energy = 0.0
+light_specular = 2.0
+
 [editable path="crypt-small"]
 [editable path="crypt-small/crypt-small-roof2"]
 [editable path="crypt-small/crypt-door2"]
@@ -492,3 +527,4 @@ shape = SubResource("CapsuleShape3D_m74xu")
 [editable path="iron-fence-border2"]
 [editable path="pine-crooked2"]
 [editable path="pine2"]
+[editable path="lightpost-single2"]

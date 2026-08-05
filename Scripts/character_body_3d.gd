@@ -63,7 +63,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -103,6 +103,7 @@ func _physics_process(delta: float) -> void:
 	var velocity_clamped = clamp(velocity.length(), 5.0, sprint_speed * 2)
 	var target_FOV = FOV + FOV_change * velocity_clamped
 	camera.fov = lerp(camera.fov, target_FOV, delta * 6.0)
+	
 	_crouch()
 	if !Input.is_action_pressed("maya3a"):
 		spread = s + velocity.length() * 0.02

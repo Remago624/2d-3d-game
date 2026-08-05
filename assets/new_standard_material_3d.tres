@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c5k0vuu57tut5" path="res://assets/forest_ground_06_diff_2k.jpg" id="1_sp0h8"]
 
 [resource]
-albedo_color = Color(0.75, 0.75, 0.75, 1)
+albedo_color = Color(0.62109375, 0.5674367, 0.44580564, 1)
 albedo_texture = ExtResource("1_sp0h8")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_triplanar = true
