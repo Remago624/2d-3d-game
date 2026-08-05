@@ -9,6 +9,10 @@ var instance_zombie
 var instance_ghost
 @onready var death_screen = $UI/DeathScreen
 @onready var player = $NavigationRegion3D/Player
+
+var zombie_count = 0
+var ghost_count = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
@@ -32,6 +36,8 @@ func _get_random_child(parent_node):
 
 
 func _on_spawn_timer_timeout() -> void:
+	if get_tree().get_nodes_in_group("zombie").size() >= 10:
+		return
 	var spawn_point = _get_random_child(spawns).global_position
 	instance_zombie = zombie.instantiate()
 	instance_zombie.position = spawn_point + Vector3(
@@ -55,6 +61,8 @@ func _on_retry_button_pressed() -> void:
 
 
 func _on_g_spawn_timer_timeout() -> void:
+	if get_tree().get_nodes_in_group("ghost").size() >= 10:
+		return
 	var spawn_point2 = _get_random_child(ghost_spawns).global_position
 	instance_ghost = ghsot.instantiate()
 	instance_ghost.position = spawn_point2 + Vector3(
