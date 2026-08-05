@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://vb6p2bo0802c" path="res://Building Models/graveyard/stone-wall-curve.glb" id="22_g82xc"]
 [ext_resource type="Texture2D" uid="uid://bb5hnj3od4gtq" path="res://Building Models/graveyard/Textures/colormap.png" id="23_we1d5"]
 [ext_resource type="PackedScene" uid="uid://ciqbccmr3myum" path="res://Building Models/graveyard/stone-wall.glb" id="24_nykkv"]
+[ext_resource type="Material" uid="uid://csjwoijoj3xhp" path="res://Building Models/graveyard/Textures/new_standard_material_3d.tres" id="25_giqbd"]
 [ext_resource type="PackedScene" uid="uid://w184732dtid6" path="res://Building Models/graveyard/grave-border.glb" id="25_y2ef2"]
 [ext_resource type="PackedScene" uid="uid://7mak3r7kk70d" path="res://Building Models/graveyard/grave.glb" id="26_ro2jq"]
 [ext_resource type="PackedScene" uid="uid://c5y6ylyourxx5" path="res://Building Models/graveyard/gravestone-roof.glb" id="27_sxqyk"]
@@ -167,6 +168,9 @@ points = PackedVector3Array(-8.317828e-05, 0.5703522, 0.099990204, 0.3749951, 0.
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_46u8f"]
 points = PackedVector3Array(-0.24321909, 0.46859652, -0.07500489, -0.24321909, 0.46859652, 0.07498042, -0.19984153, 0.4933972, -0.125, -0.22503003, 0, -0.07500489, -0.19984153, 0.4933972, 0.125, -0.22503003, 0, 0.07498042, -4.760921e-05, 0.6075875, -0.125, -0.17503394, 0, -0.125, -4.760921e-05, 0.6075875, 0.125, -0.17503394, 0, 0.125, 0.24321912, 0.46859652, -0.07500489, 0.19979392, 0.4933972, -0.125, 0.17498635, 0, -0.125, 0.19979392, 0.4933972, 0.125, 0.24321912, 0.46859652, 0.07498042, 0.17498635, 0, 0.125, 0.22498243, 0, -0.07500489, 0.22498243, 0, 0.07498042)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ci5kl"]
+albedo_color = Color(0.171875, 0.171875, 0.171875, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_pqbmb"]
 size = Vector3(0.22150002, 0.76, 0.22150002)
 
@@ -210,7 +214,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94778967, 0)
 [node name="crypt-door2" parent="crypt-small" unique_id=924815076 instance=ExtResource("4_oqkp1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5544839)
 
-[node name="door" parent="crypt-small/crypt-door2/crypt-door" parent_id_path=PackedInt32Array(924815076, 165509473) index="0" unique_id=705257460]
+[node name="door" parent="crypt-small/crypt-door2/crypt-door" parent_id_path=PackedInt32Array(924815076, 919997057) index="0" unique_id=417405082]
 transform = Transform3D(-0.17364807, 0, -0.9848078, 0, 1, 0, 0.9848078, 0, -0.17364807, -0.165, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="crypt-small" unique_id=309040630]
@@ -234,7 +238,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9434712, 0)
 [node name="crypt-large-door2" parent="crypt-large" unique_id=43498335 instance=ExtResource("5_75t0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
-[node name="door" parent="crypt-large/crypt-large-door2/crypt-large-door" parent_id_path=PackedInt32Array(43498335, 251182562) index="0" unique_id=1615954364]
+[node name="door" parent="crypt-large/crypt-large-door2/crypt-large-door" parent_id_path=PackedInt32Array(43498335, 1005766323) index="0" unique_id=1097890412]
 transform = Transform3D(-0.17364807, 0, -0.9848078, 0, 1, 0, 0.9848078, 0, -0.17364807, -0.315, 5.639933e-18, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="crypt-large" unique_id=1179219297]
@@ -351,6 +355,9 @@ shape = SubResource("ConvexPolygonShape3D_y2ef2")
 [node name="grave-border2" parent="." unique_id=533163237 instance=ExtResource("25_y2ef2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 3)
 
+[node name="grave-border" parent="grave-border2" index="0" unique_id=341985542]
+material_override = ExtResource("25_giqbd")
+
 [node name="grave2" parent="." unique_id=1251510513 instance=ExtResource("26_ro2jq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 3)
 
@@ -394,7 +401,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 3)
 shape = SubResource("ConvexPolygonShape3D_46u8f")
 
 [node name="road2" parent="." unique_id=1445335661 instance=ExtResource("5_qchkh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 5)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10, 0, 5)
+
+[node name="road" parent="road2" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_ci5kl")
 
 [node name="border-pillar2" parent="." unique_id=473230431 instance=ExtResource("33_85num")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
@@ -466,6 +476,7 @@ shape = SubResource("CapsuleShape3D_m74xu")
 [editable path="stone-wall-column2"]
 [editable path="stone-wall-curve2"]
 [editable path="stone-wall2"]
+[editable path="grave-border2"]
 [editable path="grave2"]
 [editable path="gravestone-decorative2"]
 [editable path="gravestone-bevel2"]
@@ -473,6 +484,7 @@ shape = SubResource("CapsuleShape3D_m74xu")
 [editable path="gravestone-debris2"]
 [editable path="gravestone-wide2"]
 [editable path="gravestone-roof2"]
+[editable path="road2"]
 [editable path="border-pillar2"]
 [editable path="iron-fence-border-column2"]
 [editable path="iron-fence-border-curve2"]

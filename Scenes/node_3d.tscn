@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://0dfi7cpvhw0s" path="res://Building Models/graveyard/gravestone-broken.glb" id="20_kp5il"]
 [ext_resource type="PackedScene" uid="uid://b0aayxfbrjals" path="res://Building Models/graveyard/gravestone-wide.glb" id="21_ugn1w"]
 [ext_resource type="PackedScene" uid="uid://c5y6ylyourxx5" path="res://Building Models/graveyard/gravestone-roof.glb" id="22_8ms6x"]
+[ext_resource type="Material" uid="uid://csjwoijoj3xhp" path="res://Building Models/graveyard/Textures/new_standard_material_3d.tres" id="23_28k2w"]
 [ext_resource type="PackedScene" uid="uid://c4cg7dn8scx6d" path="res://Building Models/graveyard/gravestone-cross.glb" id="23_52o0n"]
 [ext_resource type="PackedScene" uid="uid://7mak3r7kk70d" path="res://Building Models/graveyard/grave.glb" id="23_yvbty"]
 [ext_resource type="PackedScene" uid="uid://f5yy46hx7fmn" path="res://Building Models/graveyard/crypt-a.glb" id="24_ugn1w"]
@@ -35,6 +36,8 @@
 [ext_resource type="PackedScene" uid="uid://esrnvfqw4dgx" path="res://Building Models/graveyard/character-ghost.glb" id="31_e0x74"]
 [ext_resource type="PackedScene" uid="uid://by8e7yrmeivtq" path="res://Building Models/graveyard/brick-wall-curve.glb" id="31_j3itv"]
 [ext_resource type="PackedScene" uid="uid://g4n7xmoyem3n" path="res://Scenes/ghost.tscn" id="32_8ljg1"]
+[ext_resource type="PackedScene" uid="uid://0t7tmew80aof" path="res://Building Models/graveyard/road.glb" id="33_j3itv"]
+[ext_resource type="PackedScene" uid="uid://w184732dtid6" path="res://Building Models/graveyard/grave-border.glb" id="38_d4vpw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -183,6 +186,9 @@ albedo_texture = ExtResource("3_a8auw")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_triplanar = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3itv"]
+albedo_color = Color(0.171875, 0.171875, 0.171875, 1)
+
 [node name="world" type="Node3D" unique_id=902139903]
 script = ExtResource("1_wosnj")
 
@@ -202,6 +208,7 @@ shadow_enabled = true
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=913445368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012331009, 0.015684128, -0.008230686)
 navigation_mesh = SubResource("NavigationMesh_hn8rt")
+enabled = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=156980879]
 mesh = SubResource("PlaneMesh_2nw4w")
@@ -592,6 +599,9 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9, 0, -23)
 collision_layer = 3
 collision_mask = 3
 
+[node name="grave" parent="NavigationRegion3D/grave2" index="0" unique_id=664613375]
+material_override = ExtResource("23_28k2w")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/grave2" unique_id=2050190566]
 shape = SubResource("ConcavePolygonShape3D_52o0n")
 
@@ -599,6 +609,9 @@ shape = SubResource("ConcavePolygonShape3D_52o0n")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9, 0, -11.233732)
 collision_layer = 3
 collision_mask = 3
+
+[node name="grave" parent="NavigationRegion3D/grave3" index="0" unique_id=664613375]
+material_override = ExtResource("23_28k2w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/grave3" unique_id=1676215732]
 shape = SubResource("ConcavePolygonShape3D_52o0n")
@@ -608,6 +621,9 @@ transform = Transform3D(2.1213202, 0, 2.1213202, 0, 3, 0, -2.1213202, 0, 2.12132
 collision_layer = 3
 collision_mask = 3
 
+[node name="grave" parent="NavigationRegion3D/grave4" index="0" unique_id=664613375]
+material_override = ExtResource("23_28k2w")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/grave4" unique_id=681937226]
 shape = SubResource("ConcavePolygonShape3D_52o0n")
 
@@ -615,6 +631,9 @@ shape = SubResource("ConcavePolygonShape3D_52o0n")
 transform = Transform3D(2.8977773, 0, -0.7764573, 0, 3, 0, 0.7764573, 0, 2.8977773, -16.694126, 0, -18.305532)
 collision_layer = 3
 collision_mask = 3
+
+[node name="grave" parent="NavigationRegion3D/grave5" index="0" unique_id=664613375]
+material_override = ExtResource("23_28k2w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/grave5" unique_id=1789291165]
 shape = SubResource("ConcavePolygonShape3D_52o0n")
@@ -624,6 +643,9 @@ transform = Transform3D(2.9999998, 0, -2.3841858e-07, 0, 3.0000005, 0, 2.3841858
 collision_layer = 3
 collision_mask = 3
 
+[node name="grave" parent="NavigationRegion3D/grave6" index="0" unique_id=664613375]
+material_override = ExtResource("23_28k2w")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/grave6" unique_id=380677482]
 shape = SubResource("ConcavePolygonShape3D_52o0n")
 
@@ -631,6 +653,9 @@ shape = SubResource("ConcavePolygonShape3D_52o0n")
 transform = Transform3D(2.9999998, 0, -2.3841858e-07, 0, 3.0000005, 0, 2.3841858e-07, 0, 2.9999998, -15.215335, 0, -24.6516)
 collision_layer = 3
 collision_mask = 3
+
+[node name="grave" parent="NavigationRegion3D/grave7" index="0" unique_id=664613375]
+material_override = ExtResource("23_28k2w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/grave7" unique_id=501508772]
 shape = SubResource("ConcavePolygonShape3D_52o0n")
@@ -640,6 +665,9 @@ transform = Transform3D(2.9999998, 0, -2.3841858e-07, 0, 3.0000005, 0, 2.3841858
 collision_layer = 3
 collision_mask = 3
 
+[node name="grave" parent="NavigationRegion3D/grave8" index="0" unique_id=664613375]
+material_override = ExtResource("23_28k2w")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/grave8" unique_id=48782690]
 shape = SubResource("ConcavePolygonShape3D_52o0n")
 
@@ -647,6 +675,9 @@ shape = SubResource("ConcavePolygonShape3D_52o0n")
 transform = Transform3D(2.9999998, 0, -2.3841858e-07, 0, 3.0000005, 0, 2.3841858e-07, 0, 2.9999998, -14.217424, 0, -13.215326)
 collision_layer = 3
 collision_mask = 3
+
+[node name="grave" parent="NavigationRegion3D/grave9" index="0" unique_id=664613375]
+material_override = ExtResource("23_28k2w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/grave9" unique_id=6275762]
 shape = SubResource("ConcavePolygonShape3D_52o0n")
@@ -1099,17 +1130,6 @@ use_collision = true
 size = Vector3(6, 0.499, 6)
 material = SubResource("StandardMaterial3D_fdyoq")
 
-[node name="GridMap" type="GridMap" parent="." unique_id=88187344]
-mesh_library = ExtResource("8_aeo3b")
-cell_size = Vector3(0.1, 0.1, 0.1)
-cell_center_y = false
-cell_scale = 3.0
-collision_layer = 3
-collision_mask = 3
-data = {
-"cells": PackedInt32Array(65447, 65423, 22, 65394, 65404, 22, 65303, 65392, 655382, 65302, 65321, 22, 65447, 65305, 22, 65385, 65290, 22)
-}
-
 [node name="GridMap2" type="GridMap" parent="." unique_id=536133391]
 mesh_library = ExtResource("8_aeo3b")
 cell_size = Vector3(5, 5, 5)
@@ -1134,6 +1154,398 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 5)
 
 [node name="G_Spawn_timer" type="Timer" parent="." unique_id=1852187412]
 autostart = true
+
+[node name="Road" type="Node3D" parent="." unique_id=80356011]
+
+[node name="road2" parent="Road" unique_id=1445335661 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -17.001232, 0.015684128, 7.9917693)
+
+[node name="road" parent="Road/road2" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road3" parent="Road" unique_id=1768831094 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -15.501233, 0.015684128, 7.9917693)
+
+[node name="road" parent="Road/road3" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road4" parent="Road" unique_id=818239326 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.001232, 0.015684128, 7.9917693)
+
+[node name="road" parent="Road/road4" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road5" parent="Road" unique_id=1080136058 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12.501233, 0.015684128, 7.9917693)
+
+[node name="road" parent="Road/road5" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road6" parent="Road" unique_id=266103205 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -11.001233, 0.015684128, 7.9917693)
+
+[node name="road" parent="Road/road6" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road7" parent="Road" unique_id=1189199271 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -9.501232, 0.015684128, 7.9917693)
+
+[node name="road" parent="Road/road7" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road8" parent="Road" unique_id=1134945338 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -8.001233, 0.015684128, 7.9917693)
+
+[node name="road" parent="Road/road8" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road21" parent="Road" unique_id=494417802 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -15.751232, 0.015684128, 22.74177)
+
+[node name="road" parent="Road/road21" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road22" parent="Road" unique_id=1208788814 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -15.751232, 0.015684128, 24.241768)
+
+[node name="road" parent="Road/road22" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road28" parent="Road" unique_id=1405039593 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -19.001228, 0.015684128, 22.991768)
+
+[node name="road" parent="Road/road28" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road30" parent="Road" unique_id=1243952641 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20.501228, 0.015684128, 22.491768)
+
+[node name="road" parent="Road/road30" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road29" parent="Road" unique_id=1744724514 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -17.501232, 0.015684128, 22.991768)
+
+[node name="road" parent="Road/road29" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road23" parent="Road" unique_id=1113632082 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14.001232, 0.015684128, 24.49177)
+
+[node name="road" parent="Road/road23" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road24" parent="Road" unique_id=1021355120 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12.501233, 0.015684128, 24.49177)
+
+[node name="road" parent="Road/road24" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road25" parent="Road" unique_id=1797295092 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -11.001233, 0.015684128, 24.49177)
+
+[node name="road" parent="Road/road25" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road26" parent="Road" unique_id=1580120064 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -9.501232, 0.015684128, 24.49177)
+
+[node name="road" parent="Road/road26" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road27" parent="Road" unique_id=87197888 instance=ExtResource("33_j3itv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -8.001233, 0.015684128, 24.49177)
+
+[node name="road" parent="Road/road27" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road9" parent="Road" unique_id=1236755962 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 7.9917693)
+
+[node name="road" parent="Road/road9" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road10" parent="Road" unique_id=1556114015 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 9.49177)
+
+[node name="road" parent="Road/road10" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road11" parent="Road" unique_id=1471164 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 10.99177)
+
+[node name="road" parent="Road/road11" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road12" parent="Road" unique_id=648874067 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 12.49177)
+
+[node name="road" parent="Road/road12" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road13" parent="Road" unique_id=2062400850 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 13.99177)
+
+[node name="road" parent="Road/road13" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road14" parent="Road" unique_id=954350220 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 15.49177)
+
+[node name="road" parent="Road/road14" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road15" parent="Road" unique_id=1332167351 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 16.99177)
+
+[node name="road" parent="Road/road15" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road16" parent="Road" unique_id=1280466545 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 18.49177)
+
+[node name="road" parent="Road/road16" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road17" parent="Road" unique_id=1526117615 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 19.99177)
+
+[node name="road" parent="Road/road17" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road18" parent="Road" unique_id=1662190329 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 21.49177)
+
+[node name="road" parent="Road/road18" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road19" parent="Road" unique_id=1025532932 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 22.99177)
+
+[node name="road" parent="Road/road19" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road20" parent="Road" unique_id=952889054 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 24.49177)
+
+[node name="road" parent="Road/road20" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road31" parent="Road" unique_id=1829375170 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 25.99177)
+
+[node name="road" parent="Road/road31" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road32" parent="Road" unique_id=589130863 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 27.49177)
+
+[node name="road" parent="Road/road32" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road33" parent="Road" unique_id=1541329954 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 28.99177)
+
+[node name="road" parent="Road/road33" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road34" parent="Road" unique_id=2003681961 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -6.5012326, 0.015684128, 30.49177)
+
+[node name="road" parent="Road/road34" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road35" parent="Road" unique_id=1297391747 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-1.7320509, 0, -0.9999999, 0, 2, 0, 0.9999999, 0, -1.7320509, -7.552677, 0.015684128, 31.61677)
+
+[node name="road" parent="Road/road35" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road36" parent="Road" unique_id=42310013 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-1.7320509, 0, -0.9999999, 0, 2, 0, 0.9999999, 0, -1.7320509, -8.851715, 0.015684128, 32.366768)
+
+[node name="road" parent="Road/road36" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road37" parent="Road" unique_id=1450647334 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-1.7320509, 0, -0.9999999, 0, 2, 0, 0.9999999, 0, -1.7320509, -10.150751, 0.015684128, 33.116768)
+
+[node name="road" parent="Road/road37" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road38" parent="Road" unique_id=986465149 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-1.7320509, 0, -0.9999999, 0, 2, 0, 0.9999999, 0, -1.7320509, -11.44979, 0.015684128, 33.866768)
+
+[node name="road" parent="Road/road38" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road39" parent="Road" unique_id=594369646 instance=ExtResource("33_j3itv")]
+transform = Transform3D(0.99999994, 0, -1.7320509, 0, 2, 0, 1.7320509, 0, 0.99999994, -6.126233, 0.015684128, 31.793213)
+
+[node name="road" parent="Road/road39" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road40" parent="Road" unique_id=1093750905 instance=ExtResource("33_j3itv")]
+transform = Transform3D(0.99999994, 0, -1.7320509, 0, 2, 0, 1.7320509, 0, 0.99999994, -5.376233, 0.015684128, 33.09225)
+
+[node name="road" parent="Road/road40" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road41" parent="Road" unique_id=625723882 instance=ExtResource("33_j3itv")]
+transform = Transform3D(0.99999994, 0, -1.7320509, 0, 2, 0, 1.7320509, 0, 0.99999994, -4.626233, 0.015684128, 34.391285)
+
+[node name="road" parent="Road/road41" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road42" parent="Road" unique_id=1071818568 instance=ExtResource("33_j3itv")]
+transform = Transform3D(0.99999994, 0, -1.7320509, 0, 2, 0, 1.7320509, 0, 0.99999994, -3.876233, 0.015684128, 35.690323)
+
+[node name="road" parent="Road/road42" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road43" parent="Road" unique_id=110840520 instance=ExtResource("33_j3itv")]
+transform = Transform3D(0.99999994, 0, -1.7320509, 0, 2, 0, 1.7320509, 0, 0.99999994, -10.626233, 0.015684128, 35.293213)
+
+[node name="road" parent="Road/road43" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road44" parent="Road" unique_id=842324468 instance=ExtResource("33_j3itv")]
+transform = Transform3D(0.99999994, 0, -1.7320509, 0, 2, 0, 1.7320509, 0, 0.99999994, -9.876233, 0.015684128, 36.59225)
+
+[node name="road" parent="Road/road44" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road45" parent="Road" unique_id=1020471704 instance=ExtResource("33_j3itv")]
+transform = Transform3D(0.99999994, 0, -1.7320509, 0, 2, 0, 1.7320509, 0, 0.99999994, -9.126233, 0.015684128, 37.891285)
+
+[node name="road" parent="Road/road45" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road46" parent="Road" unique_id=1258750268 instance=ExtResource("33_j3itv")]
+transform = Transform3D(0.99999994, 0, -1.7320509, 0, 2, 0, 1.7320509, 0, 0.99999994, -8.376233, 0.015684128, 39.190323)
+
+[node name="road" parent="Road/road46" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road47" parent="Road" unique_id=2079193425 instance=ExtResource("33_j3itv")]
+transform = Transform3D(1.7320509, 0, 1, 0, 2, 0, -1, 0, 1.7320509, -2.949788, 0.015684128, 36.866768)
+
+[node name="road" parent="Road/road47" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road48" parent="Road" unique_id=300108233 instance=ExtResource("33_j3itv")]
+transform = Transform3D(1.7320509, 0, 1, 0, 2, 0, -1, 0, 1.7320509, -1.6507502, 0.015684128, 36.116768)
+
+[node name="road" parent="Road/road48" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road49" parent="Road" unique_id=827716750 instance=ExtResource("33_j3itv")]
+transform = Transform3D(1.7320509, 0, 1, 0, 2, 0, -1, 0, 1.7320509, -0.35171604, 0.015684128, 35.366768)
+
+[node name="road" parent="Road/road49" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road50" parent="Road" unique_id=1977769484 instance=ExtResource("33_j3itv")]
+transform = Transform3D(1.7320509, 0, 1, 0, 2, 0, -1, 0, 1.7320509, 0.9473219, 0.015684128, 34.616768)
+
+[node name="road" parent="Road/road50" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road51" parent="Road" unique_id=188763586 instance=ExtResource("33_j3itv")]
+transform = Transform3D(1.7320509, 0, 1, 0, 2, 0, -1, 0, 1.7320509, -4.949788, 0.015684128, 30.866768)
+
+[node name="road" parent="Road/road51" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road52" parent="Road" unique_id=1384921473 instance=ExtResource("33_j3itv")]
+transform = Transform3D(1.7320509, 0, 1, 0, 2, 0, -1, 0, 1.7320509, -3.6507502, 0.015684128, 30.116768)
+
+[node name="road" parent="Road/road52" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road53" parent="Road" unique_id=861291860 instance=ExtResource("33_j3itv")]
+transform = Transform3D(1.7320509, 0, 1, 0, 2, 0, -1, 0, 1.7320509, -2.351716, 0.015684128, 29.366768)
+
+[node name="road" parent="Road/road53" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road54" parent="Road" unique_id=1549105222 instance=ExtResource("33_j3itv")]
+transform = Transform3D(1.7320509, 0, 1, 0, 2, 0, -1, 0, 1.7320509, -1.0526781, 0.015684128, 28.616768)
+
+[node name="road" parent="Road/road54" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road55" parent="Road" unique_id=686707776 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-1.0000001, 0, 1.7320509, 0, 2, 0, -1.7320509, 0, -1.0000001, -1.8762331, 0.015684128, 27.190323)
+
+[node name="road" parent="Road/road55" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road56" parent="Road" unique_id=994471426 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-1.0000001, 0, 1.7320509, 0, 2, 0, -1.7320509, 0, -1.0000001, -2.626233, 0.015684128, 25.891285)
+
+[node name="road" parent="Road/road56" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road57" parent="Road" unique_id=39740747 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-1.0000001, 0, 1.7320509, 0, 2, 0, -1.7320509, 0, -1.0000001, -3.376233, 0.015684128, 24.59225)
+
+[node name="road" parent="Road/road57" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="road58" parent="Road" unique_id=143648372 instance=ExtResource("33_j3itv")]
+transform = Transform3D(-1.0000001, 0, 1.7320509, 0, 2, 0, -1.7320509, 0, -1.0000001, -4.126233, 0.015684128, 23.293213)
+
+[node name="road" parent="Road/road58" index="0" unique_id=1579084568]
+material_override = SubResource("StandardMaterial3D_j3itv")
+
+[node name="grave-border2" parent="." unique_id=533163237 instance=ExtResource("38_d4vpw")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -8.886095, 0, -11.371683)
+
+[node name="grave-border" parent="grave-border2" index="0" unique_id=341985542]
+material_override = ExtResource("23_28k2w")
+
+[node name="grave-border3" parent="." unique_id=681875457 instance=ExtResource("38_d4vpw")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -14.110833, 0, -13.219116)
+
+[node name="grave-border" parent="grave-border3" index="0" unique_id=341985542]
+material_override = ExtResource("23_28k2w")
+
+[node name="grave-border4" parent="." unique_id=728900933 instance=ExtResource("38_d4vpw")]
+transform = Transform3D(-2.12132, 0, -2.1213205, 0, 3, 0, 2.1213205, 0, -2.12132, -18.382751, 0, -11.139376)
+
+[node name="grave-border" parent="grave-border4" index="0" unique_id=341985542]
+material_override = ExtResource("23_28k2w")
+
+[node name="grave-border5" parent="." unique_id=971276413 instance=ExtResource("38_d4vpw")]
+transform = Transform3D(-3, 0, -5.9604645e-07, 0, 3, 0, 5.9604645e-07, 0, -3, -23.485767, 0, -21.650215)
+
+[node name="grave-border" parent="grave-border5" index="0" unique_id=341985542]
+material_override = ExtResource("23_28k2w")
+
+[node name="grave-border6" parent="." unique_id=373486949 instance=ExtResource("38_d4vpw")]
+transform = Transform3D(3, 0, 8.5831476e-07, 0, 3, 0, -8.5831476e-07, 0, 3, -23.002012, 0, -14.311408)
+
+[node name="grave-border" parent="grave-border6" index="0" unique_id=341985542]
+material_override = ExtResource("23_28k2w")
+
+[node name="grave-border7" parent="." unique_id=1403477145 instance=ExtResource("38_d4vpw")]
+transform = Transform3D(3, 0, 8.5831476e-07, 0, 3, 0, -8.5831476e-07, 0, 3, -15.002012, 0, -24.615396)
+
+[node name="grave-border" parent="grave-border7" index="0" unique_id=341985542]
+material_override = ExtResource("23_28k2w")
+
+[node name="grave-border8" parent="." unique_id=221608813 instance=ExtResource("38_d4vpw")]
+transform = Transform3D(3, 0, 8.5831476e-07, 0, 3, 0, -8.5831476e-07, 0, 3, -9.002012, 0, -23.115396)
+
+[node name="grave-border" parent="grave-border8" index="0" unique_id=341985542]
+material_override = ExtResource("23_28k2w")
+
+[node name="grave-border9" parent="." unique_id=2010708098 instance=ExtResource("38_d4vpw")]
+transform = Transform3D(2.8977778, 0, -0.7764563, 0, 3, 0, 0.7764563, 0, 2.8977778, -16.611025, 0, -18.279942)
+
+[node name="grave-border" parent="grave-border9" index="0" unique_id=341985542]
+material_override = ExtResource("23_28k2w")
 
 [connection signal="player_died" from="NavigationRegion3D/Player" to="." method="_on_player_player_died"]
 [connection signal="player_hit" from="NavigationRegion3D/Player" to="." method="_on_player_player_hit"]
@@ -1228,3 +1640,68 @@ autostart = true
 [editable path="NavigationRegion3D/brick-wall-end3"]
 [editable path="NavigationRegion3D/brick-wall-curve-small2"]
 [editable path="NavigationRegion3D/brick-wall-curve2"]
+[editable path="Road/road2"]
+[editable path="Road/road3"]
+[editable path="Road/road4"]
+[editable path="Road/road5"]
+[editable path="Road/road6"]
+[editable path="Road/road7"]
+[editable path="Road/road8"]
+[editable path="Road/road21"]
+[editable path="Road/road22"]
+[editable path="Road/road28"]
+[editable path="Road/road30"]
+[editable path="Road/road29"]
+[editable path="Road/road23"]
+[editable path="Road/road24"]
+[editable path="Road/road25"]
+[editable path="Road/road26"]
+[editable path="Road/road27"]
+[editable path="Road/road9"]
+[editable path="Road/road10"]
+[editable path="Road/road11"]
+[editable path="Road/road12"]
+[editable path="Road/road13"]
+[editable path="Road/road14"]
+[editable path="Road/road15"]
+[editable path="Road/road16"]
+[editable path="Road/road17"]
+[editable path="Road/road18"]
+[editable path="Road/road19"]
+[editable path="Road/road20"]
+[editable path="Road/road31"]
+[editable path="Road/road32"]
+[editable path="Road/road33"]
+[editable path="Road/road34"]
+[editable path="Road/road35"]
+[editable path="Road/road36"]
+[editable path="Road/road37"]
+[editable path="Road/road38"]
+[editable path="Road/road39"]
+[editable path="Road/road40"]
+[editable path="Road/road41"]
+[editable path="Road/road42"]
+[editable path="Road/road43"]
+[editable path="Road/road44"]
+[editable path="Road/road45"]
+[editable path="Road/road46"]
+[editable path="Road/road47"]
+[editable path="Road/road48"]
+[editable path="Road/road49"]
+[editable path="Road/road50"]
+[editable path="Road/road51"]
+[editable path="Road/road52"]
+[editable path="Road/road53"]
+[editable path="Road/road54"]
+[editable path="Road/road55"]
+[editable path="Road/road56"]
+[editable path="Road/road57"]
+[editable path="Road/road58"]
+[editable path="grave-border2"]
+[editable path="grave-border3"]
+[editable path="grave-border4"]
+[editable path="grave-border5"]
+[editable path="grave-border6"]
+[editable path="grave-border7"]
+[editable path="grave-border8"]
+[editable path="grave-border9"]

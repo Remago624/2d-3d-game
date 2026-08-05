@@ -117,6 +117,21 @@ shadow_mesh = SubResource("ArrayMesh_ntpu1")
 radius = 0.20117188
 height = 0.70184374
 
+[sub_resource type="Animation" id="Animation_3btnm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("character-ghost/root/torso:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_fqbnu"]
 resource_name = "attack-kick-left"
 length = 0.53333336
@@ -926,6 +941,42 @@ tracks/5/path = NodePath("character-ghost/root")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("character-ghost/root/torso:transparency")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(2.070532, 0.27739352),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("character-ghost/root/torso/arm-right:transparency")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(2.070532, 0.27739352),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("character-ghost/root/torso/arm-left:transparency")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(2.070532, 0.27739352),
+"update": 0,
+"values": [1.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_x8tn1"]
 resource_name = "interact-left"
@@ -1621,6 +1672,7 @@ tracks/5/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3m72w"]
 _data = {
+&"RESET": SubResource("Animation_3btnm"),
 &"attack-kick-left": SubResource("Animation_fqbnu"),
 &"attack-kick-right": SubResource("Animation_orbja"),
 &"attack-melee-left": SubResource("Animation_f3o2e"),
@@ -1760,20 +1812,19 @@ script = ExtResource("1_e3r4w")
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="root" type="Node3D" parent="character-ghost" unique_id=1394611159]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.044800002, 0)
 
 [node name="torso" type="MeshInstance3D" parent="character-ghost/root" unique_id=491062733]
-transform = Transform3D(0.968202, 0, 0.25016952, 0, 1, 0, -0.25016952, 0, 0.968202, 0, 0.223184, -7.219114e-16)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0.223184, -7.219114e-16)
 mesh = SubResource("ArrayMesh_jk68u")
 skeleton = NodePath("")
 
 [node name="arm-right" type="MeshInstance3D" parent="character-ghost/root/torso" unique_id=248275582]
-transform = Transform3D(0.69592893, -0.20616028, -0.68788147, 0.2836876, 0.9589167, -0.00038397312, 0.65970016, -0.19487622, 0.7258229, -0.125, 0.15, 0.0024999976)
+transform = Transform3D(0.7071068, -0.7071067, 0, 0.7071067, 0.7071068, 0, 0, 0, 1, -0.125, 0.15, 0.0024999976)
 mesh = SubResource("ArrayMesh_esoxk")
 skeleton = NodePath("")
 
 [node name="arm-left" type="MeshInstance3D" parent="character-ghost/root/torso" unique_id=1146214424]
-transform = Transform3D(0.69592893, 0.20616028, -0.68788147, -0.2836876, 0.9589167, 0.00038397312, 0.65970016, 0.19487622, 0.7258229, 0.125, 0.15, 0.0024999976)
+transform = Transform3D(0.7071068, 0.7071067, 0, -0.7071067, 0.7071068, 0, 0, 0, 1, 0.125, 0.15, 0.0024999976)
 mesh = SubResource("ArrayMesh_oh8rc")
 skeleton = NodePath("")
 
@@ -1788,7 +1839,6 @@ transform = Transform3D(0.99999386, 0, -5.751848e-06, 0, 0.9999997, 0, 5.751848e
 shape = SubResource("CapsuleShape3D_0idsm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=656342332]
-active = false
 libraries/ = SubResource("AnimationLibrary_3m72w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1937044488]
@@ -1804,7 +1854,7 @@ parameters/conditions/run = false
 parameters/conditions/sprint = false
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1849029030]
-path_height_offset = 0.5
+path_height_offset = 1.0
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=750978960]
 size = Vector2i(240, 4)
